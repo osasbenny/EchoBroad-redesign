@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Echobroad Agency — Case Study Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0a0a0f;
+  --paper: #fafaf8;
+  --mist: #e8e6e1;
+  --smoke: #9d9b96;
+  --gold: #d4a843;
+  --gold-pale: #f0d896;
+  --exec-ink: #0d0a07;
+  --exec-amber: #c8874a;
+  --exec-cream: #f5ede0;
+  --elysian-deep: #08090d;
+  --elysian-rose: #c9778e;
+  --elysian-blush: #f0d8df;
+  --signal: #1a1aff;
+  --success: #1a9e5a;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* GRAIN */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ─── UTILITIES ─── */
+.tag {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 1px solid currentColor;
+  opacity: 0.6;
+}
+
+/* ─── NAVBAR ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(10,10,15,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--paper);
+}
+
+.nav-logo span { color: var(--gold); }
+
+.nav-cta {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--gold);
+  padding: 10px 22px;
+  text-decoration: none;
+  transition: all 0.25s;
+  font-weight: 700;
+}
+.nav-cta:hover { background: var(--gold-pale); transform: translateY(-1px); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px 80px 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero-kicker::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(46px, 5vw, 78px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: riseIn 1s cubic-bezier(0.16,1,0.3,1) 0.2s forwards;
+}
+.hero-h1 em { color: var(--gold); font-style: italic; }
+
+.hero-sub {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--smoke);
+  max-width: 400px;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: riseIn 1s cubic-bezier(0.16,1,0.3,1) 0.4s forwards;
+}
+
+.hero-stats-row {
+  display: flex;
+  gap: 40px;
+  opacity: 0;
+  animation: riseIn 1s cubic-bezier(0.16,1,0.3,1) 0.6s forwards;
+}
+
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hero-stat-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--smoke);
+}
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-right-inner {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.hero-brand-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: riseIn 1.2s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
+}
+.hero-brand-card:first-child { border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+.hero-brand-card--exec { background: linear-gradient(135deg, #1a100500 0%, #c8874a12 100%); }
+.hero-brand-card--elysian { background: linear-gradient(135deg, #0d0a1500 0%, #c9778e12 100%); }
+
+.brand-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.18;
+  filter: grayscale(30%);
+}
+
+.brand-card-content { position: relative; z-index: 2; }
+
+.brand-card-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.hero-brand-card--exec .brand-card-label { color: var(--exec-amber); }
+.hero-brand-card--elysian .brand-card-label { color: var(--elysian-rose); }
+
+.brand-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--paper);
+}
+
+/* ─── SECTION WRAPPER ─── */
+.section { padding: 120px 80px; max-width: 1400px; margin: 0 auto; }
+.section-sm { padding: 80px 80px; max-width: 1400px; margin: 0 auto; }
+
+.section-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.section-eyebrow::after { content: ''; flex: 0 0 40px; height: 1px; background: var(--gold); }
+
+.section-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 4vw, 58px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.section-h2 em { color: var(--gold); font-style: italic; }
+
+/* ─── FULL-BLEED SEPARATOR ─── */
+.sep {
+  width: 100vw; height: 1px;
+  position: relative; left: 50%; transform: translateX(-50%);
+  background: rgba(255,255,255,0.06);
+}
+
+/* ─── BRAND CASE STUDY WRAPPER ─── */
+.case-wrapper {
+  width: 100vw; position: relative; left: 50%; transform: translateX(-50%);
+  padding: 0;
+}
+
+/* ─── CASE HEADER ─── */
+.case-header {
+  padding: 100px 80px 70px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: end;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.case-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 200px;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.04;
+  position: absolute;
+  right: 80px;
+  top: 40px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.case-client-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.exec .case-client-tag { color: var(--exec-amber); }
+.ely .case-client-tag { color: var(--elysian-rose); }
+
+.case-brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--paper);
+  margin-bottom: 16px;
+}
+
+.case-brand-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--smoke);
+  max-width: 460px;
+}
+
+.case-meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 8px;
+}
+
+.case-meta-item {}
+.case-meta-key {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  margin-bottom: 4px;
+}
+.case-meta-val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--paper);
+  letter-spacing: 0.01em;
+}
+
+/* ─── METRICS BAR ─── */
+.metrics-bar {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.metric-cell {
+  padding: 48px 40px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+.metric-cell:last-child { border-right: none; }
+.metric-cell:hover { background: rgba(255,255,255,0.02); }
+
+.metric-cell::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  transition: width 0.4s ease;
+}
+.exec .metric-cell::after { background: var(--exec-amber); }
+.ely .metric-cell::after { background: var(--elysian-rose); }
+.metric-cell:hover::after { width: 100%; }
+
+.metric-key {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  margin-bottom: 14px;
+}
+
+.metric-val {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.exec .metric-val { color: var(--exec-amber); }
+.ely .metric-val { color: var(--elysian-rose); }
+
+.metric-sub {
+  font-size: 12px;
+  color: var(--smoke);
+  font-weight: 400;
+}
+
+/* ─── BODY CONTENT GRID ─── */
+.case-body {
+  padding: 80px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.case-body-full {
+  padding: 0 80px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.case-col-head {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.exec .case-col-head { color: var(--exec-amber); }
+.ely .case-col-head { color: var(--elysian-rose); }
+
+.case-col-h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.case-col p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--smoke);
+  margin-bottom: 14px;
+}
+
+.case-col p strong { color: var(--paper); font-weight: 600; }
+
+.bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+.bullet-list li {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--smoke);
+  padding-left: 24px;
+  position: relative;
+}
+.bullet-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  font-size: 8px;
+  top: 4px;
+}
+.exec .bullet-list li::before { color: var(--exec-amber); }
+.ely .bullet-list li::before { color: var(--elysian-rose); }
+
+/* ─── BEFORE/AFTER ─── */
+.ba-section {
+  padding: 0 80px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ba-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 30px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.ba-card {
+  padding: 50px 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ba-card--before { background: rgba(255,255,255,0.02); }
+.ba-card--after { }
+.exec .ba-card--after { background: rgba(200,135,74,0.06); }
+.ely .ba-card--after { background: rgba(201,119,142,0.06); }
+
+.ba-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ba-card--before .ba-label { color: var(--smoke); }
+.exec .ba-card--after .ba-label { color: var(--exec-amber); }
+.ely .ba-card--after .ba-label { color: var(--elysian-rose); }
+
+.ba-label-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+}
+
+.ba-metric-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ba-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.ba-row:last-child { border-bottom: none; }
+
+.ba-row-label {
+  font-size: 12px;
+  color: var(--smoke);
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ba-row-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--paper);
+}
+.ba-card--before .ba-row-val { color: var(--smoke); opacity: 0.7; }
+.exec .ba-card--after .ba-row-val { color: var(--exec-amber); }
+.ely .ba-card--after .ba-row-val { color: var(--elysian-rose); }
+
+.ba-arrow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px; height: 44px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  z-index: 5;
+  box-shadow: 0 0 30px rgba(212,168,67,0.4);
+  font-weight: bold;
+  color: var(--ink);
+}
+
+/* ─── VIDEO PROOF ─── */
+.video-section {
+  padding: 0 80px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.video-card {
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 9/16;
+  background: rgba(255,255,255,0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+.exec .video-card:hover { border-color: var(--exec-amber); }
+.ely .video-card:hover { border-color: var(--elysian-rose); }
+
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+.video-card:hover .video-play-btn { background: rgba(255,255,255,0.25); transform: translate(-50%,-50%) scale(1.1); }
+
+.play-triangle {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 16px solid white;
+  margin-left: 4px;
+}
+
+.video-card-info {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 3;
+}
+
+.video-card-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--paper);
+  margin-bottom: 4px;
+}
+.video-card-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+.video-placeholder-icon {
+  font-size: 40px;
+  opacity: 0.2;
+}
+
+/* ─── STRATEGY BLOCK ─── */
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 30px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.strategy-cell {
+  padding: 40px 36px;
+  background: rgba(255,255,255,0.01);
+  transition: background 0.3s;
+}
+.strategy-cell:hover { background: rgba(255,255,255,0.03); }
+
+.strategy-cell-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 16px;
+  opacity: 0.15;
+}
+.exec .strategy-cell-num { color: var(--exec-amber); }
+.ely .strategy-cell-num { color: var(--elysian-rose); }
+
+.strategy-cell-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--paper);
+  margin-bottom: 10px;
+}
+
+.strategy-cell-text {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--smoke);
+}
+
+/* ─── TESTIMONIAL / QUOTE ─── */
+.quote-block {
+  padding: 0 80px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.quote-inner {
+  padding: 60px;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+}
+
+.exec .quote-inner { border-left: 3px solid var(--exec-amber); }
+.ely .quote-inner { border-left: 3px solid var(--elysian-rose); }
+
+.quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 100px;
+  line-height: 0;
+  font-weight: 900;
+  position: absolute;
+  top: 40px; left: 50px;
+  opacity: 0.06;
+  color: var(--paper);
+}
+
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 2vw, 26px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--paper);
+  margin-bottom: 30px;
+  max-width: 760px;
+  position: relative;
+  z-index: 2;
+}
+
+.quote-attr {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--smoke);
+}
+.exec .quote-attr span { color: var(--exec-amber); }
+.ely .quote-attr span { color: var(--elysian-rose); }
+
+/* ─── CTA SECTION ─── */
+.cta-section {
+  padding: 140px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background: var(--paper);
+}
+
+.cta-section * { color: var(--ink); }
+
+.cta-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--smoke) !important;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+.cta-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 6vw, 90px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--ink) !important;
+  margin-bottom: 24px;
+}
+
+.cta-h2 em {
+  font-style: italic;
+  color: var(--gold) !important;
+}
+
+.cta-sub {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--smoke) !important;
+  max-width: 520px;
+  margin: 0 auto 56px;
+}
+
+.cta-btn {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--paper) !important;
+  background: var(--ink);
+  padding: 20px 54px;
+  text-decoration: none;
+  transition: all 0.3s;
+  position: relative;
+}
+.cta-btn:hover {
+  background: var(--gold);
+  color: var(--ink) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(212,168,67,0.3);
+}
+
+.cta-secondary {
+  display: block;
+  margin-top: 20px;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--smoke) !important;
+  text-decoration: none;
+}
+
+.cta-secondary:hover { color: var(--ink) !important; }
+
+.cta-trust {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.trust-item {
+  text-align: center;
+}
+.trust-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gold) !important;
+  display: block;
+  margin-bottom: 4px;
+}
+.trust-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--smoke) !important;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  padding: 40px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--paper);
+}
+.footer-logo span { color: var(--gold); }
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-link {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-link:hover { color: var(--paper); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal.in-delay-1 { transition-delay: 0.1s; }
+.reveal.in-delay-2 { transition-delay: 0.2s; }
+.reveal.in-delay-3 { transition-delay: 0.3s; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 100px 40px 80px; }
+  .case-header { grid-template-columns: 1fr; gap: 40px; padding: 80px 40px 60px; }
+  .metrics-bar { grid-template-columns: repeat(3, 1fr); }
+  .case-body { grid-template-columns: 1fr; padding: 60px 40px; }
+  .case-body-full { padding: 0 40px 60px; }
+  .ba-section, .video-section, .quote-block, .strategy-grid-wrapper { padding-left: 40px; padding-right: 40px; }
+  .ba-grid { grid-template-columns: 1fr; }
+  .ba-arrow { display: none; }
+  .video-grid { grid-template-columns: 1fr 1fr; }
+  .strategy-grid { grid-template-columns: 1fr; }
+  .section, .section-sm { padding: 80px 40px; }
+  .cta-section { padding: 80px 40px; }
+  footer { flex-direction: column; gap: 20px; text-align: center; padding: 40px; }
+}
+
+@media (max-width: 640px) {
+  nav { padding: 16px 24px; }
+  .metrics-bar { grid-template-columns: repeat(2, 1fr); }
+  .video-grid { grid-template-columns: 1fr; }
+  .cta-trust { flex-direction: column; gap: 30px; }
+}
+
+/* accent backgrounds */
+.exec-bg { background: var(--exec-ink); }
+.ely-bg { background: var(--elysian-deep); }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="/" class="nav-logo" style="text-decoration:none;color:inherit">Echo<span>broad</span></a>
+  <a href="#consultation" class="nav-cta">Book a Consultation</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-kicker">Meta Ads Case Study — 2023</div>
+    <h1 class="hero-h1">We Don't Just Run Ads. We <em>Print Revenue.</em></h1>
+    <p class="hero-sub">Two luxury brands. Two winning campaigns. Real spend. Real results. See exactly how Echobroad turned Meta ad budgets into measurable sales for Execuluxe and Elysian Parfum.</p>
+    <div class="hero-stats-row">
+      <div>
+        <div class="hero-stat-num">5.8×</div>
+        <div class="hero-stat-label">Avg ROAS</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">$0</div>
+        <div class="hero-stat-label">Wasted Guesswork</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">2</div>
+        <div class="hero-stat-label">Luxury Brands</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-inner">
+      <div class="hero-brand-card hero-brand-card--exec">
+        <img class="brand-card-img" src="https://execuluxe.com/cdn/shop/files/IMG_1340.jpg" alt="Execuluxe" onerror="this.style.display='none'">
+        <div class="brand-card-content">
+          <div class="brand-card-label">Client 01 · Luxury Accessories</div>
+          <div class="brand-card-name">EXECULUXE</div>
+        </div>
+      </div>
+      <div class="hero-brand-card hero-brand-card--elysian">
+        <img class="brand-card-img" src="https://elysianparfum.com/cdn/shop/files/elysian-hero.jpg" alt="Elysian" onerror="this.style.display='none'">
+        <div class="brand-card-content">
+          <div class="brand-card-label">Client 02 · Artisan Fragrance</div>
+          <div class="brand-card-name">ELYSIAN PARFUM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEPARATOR -->
+<div class="sep"></div>
+
+<!-- ══════════════════════════════════════════════
+     CASE STUDY 01 — EXECULUXE
+══════════════════════════════════════════════ -->
+<div class="case-wrapper exec-bg exec">
+
+  <!-- Header -->
+  <div class="case-header" style="position:relative;">
+    <div class="case-number">01</div>
+    <div class="reveal">
+      <div class="case-client-tag">Case Study 01 · Luxury Vegan Accessories · USA</div>
+      <div class="case-brand-name">Execuluxe</div>
+      <p class="case-brand-desc">
+        A Florida-based luxury brand reinventing the professional woman's travel bag — 
+        vegan leather rollerbriefs that convert from a structured tote to a wheeled 
+        carry-on. Priced at <strong style="color:#f5ede0">$669–$699</strong>, these are high-consideration, high-AOV products 
+        that demand precision targeting and persuasive creative to convert.
+      </p>
+    </div>
+    <div class="case-meta-col reveal in-delay-2">
+      <div class="case-meta-item">
+        <div class="case-meta-key">Campaign Platform</div>
+        <div class="case-meta-val">Facebook &amp; Instagram (Meta)</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-key">Campaign Duration</div>
+        <div class="case-meta-val">30 Days — December 2023</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-key">Product Price Point</div>
+        <div class="case-meta-val">$669 – $699 per Rollerbrief</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-key">Target Market</div>
+        <div class="case-meta-val">Professional Women, USA, Ages 28–52</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Metrics Bar -->
+  <div class="metrics-bar reveal">
+    <div class="metric-cell">
+      <div class="metric-key">Total Ad Spend</div>
+      <div class="metric-val">$1,500</div>
+      <div class="metric-sub">30-day campaign</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-key">Total Revenue</div>
+      <div class="metric-val">$9,366</div>
+      <div class="metric-sub">Direct attributable sales</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-key">ROAS</div>
+      <div class="metric-val">6.24×</div>
+      <div class="metric-sub">Return on ad spend</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-key">Units Sold</div>
+      <div class="metric-val">14</div>
+      <div class="metric-sub">Rollerbriefs purchased</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-key">Cost Per Sale</div>
+      <div class="metric-val">$107</div>
+      <div class="metric-sub">On a $684 avg. order</div>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="case-body">
+    <div class="case-col reveal">
+      <div class="case-col-head">The Challenge</div>
+      <h3 class="case-col-h3">Converting cold traffic on a $669 product</h3>
+      <p>Selling a near-$700 bag to a stranger on social media is not simple. The product is exceptional — but without the right creative, the right audience, and the right message, budget disappears fast with nothing to show for it.</p>
+      <p>Execuluxe had a stunning product and genuine customer love, but <strong>no structured paid media presence</strong>. Zero consistent ad spend. No retargeting infrastructure. No video creative built for Meta's algorithm.</p>
+      <p>They needed someone to build it from scratch and make it profitable from day one.</p>
+    </div>
+    <div class="case-col reveal in-delay-2">
+      <div class="case-col-head">Our Strategy</div>
+      <h3 class="case-col-h3">Product-led storytelling + layered targeting</h3>
+      <ul class="bullet-list">
+        <li><strong>Video-first creative</strong> showing the bag's signature transformation — tote to rollerbrief in seconds — designed to stop the scroll within the first 2 seconds</li>
+        <li><strong>Hook copywriting</strong> that led with the professional woman's pain points: heavy bags, messy travel, sacrificing style for function</li>
+        <li><strong>Layered audience targeting</strong> combining interest stacks (executive women, business travel, luxury fashion) with lookalike audiences built from website visitors</li>
+        <li><strong>Retargeting funnel</strong> re-engaging video viewers and product page visitors with testimonial-led creatives and urgency-based offers</li>
+        <li><strong>Q4 timing</strong> capitalised on peak gifting season — women buying for themselves and partners buying as gifts</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Strategy Steps -->
+  <div class="case-body-full reveal">
+    <div class="case-col-head" style="margin-bottom:24px;">Campaign Architecture — 3-Phase Funnel</div>
+    <div class="strategy-grid">
+      <div class="strategy-cell">
+        <div class="strategy-cell-num">01</div>
+        <div class="strategy-cell-title">Awareness — Cold Traffic</div>
+        <div class="strategy-cell-text">Short-form Reels and video ads targeting broad interest audiences of professional women in the USA. Goal: get the product seen. Metric tracked: video views, CPM, 3-second view rate.</div>
+      </div>
+      <div class="strategy-cell">
+        <div class="strategy-cell-num">02</div>
+        <div class="strategy-cell-title">Consideration — Warm Audiences</div>
+        <div class="strategy-cell-text">Retargeted video viewers (50%+ watch) and website visitors with social proof creatives — customer reviews, unboxing moments, lifestyle shots. Pushed them to product pages.</div>
+      </div>
+      <div class="strategy-cell">
+        <div class="strategy-cell-num">03</div>
+        <div class="strategy-cell-title">Conversion — Hot Audiences</div>
+        <div class="strategy-cell-text">Tight retargeting of cart abandoners and product page visitors. Urgency messaging — "Holiday shipping deadline", "Free accessories when you order today". Direct checkout CTAs.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Before & After -->
+  <div class="ba-section reveal">
+    <div class="case-col-head">Before &amp; After — The Echobroad Effect</div>
+    <div class="ba-grid" style="position:relative;">
+      <div class="ba-card ba-card--before">
+        <div class="ba-label"><span class="ba-label-dot"></span> Before Echobroad</div>
+        <div class="ba-metric-row">
+          <div class="ba-row">
+            <div class="ba-row-label">Monthly Ad Spend</div>
+            <div class="ba-row-val">$0</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Paid Sales / Month</div>
+            <div class="ba-row-val">0 units</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">ROAS</div>
+            <div class="ba-row-val">N/A</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Revenue from Ads</div>
+            <div class="ba-row-val">$0</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Brand Visibility</div>
+            <div class="ba-row-val">Organic Only</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Retargeting Funnel</div>
+            <div class="ba-row-val">None</div>
+          </div>
+        </div>
+      </div>
+      <div class="ba-arrow">→</div>
+      <div class="ba-card ba-card--after">
+        <div class="ba-label"><span class="ba-label-dot"></span> After Echobroad — 30 Days</div>
+        <div class="ba-metric-row">
+          <div class="ba-row">
+            <div class="ba-row-label">Total Ad Spend</div>
+            <div class="ba-row-val">$1,500</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Paid Sales</div>
+            <div class="ba-row-val">14 units</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">ROAS</div>
+            <div class="ba-row-val">6.24×</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Revenue from Ads</div>
+            <div class="ba-row-val">$9,366</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Brand Visibility</div>
+            <div class="ba-row-val">50,000+ Reach</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Retargeting Funnel</div>
+            <div class="ba-row-val">Fully Built &amp; Live</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Proof -->
+  <div class="video-section reveal">
+    <div class="case-col-head">Video Ad Proof — Live Campaign Creatives</div>
+    <div class="video-grid">
+      <!-- Uploaded video 1 -->
+      <div class="video-card" onclick="toggleVideo(this)">
+        <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline preload="metadata"></video>
+        <div class="video-overlay"></div>
+        <div class="video-play-btn"><div class="play-triangle"></div></div>
+        <div class="video-card-info">
+          <div class="video-card-title">Hero Ad — Product Demo</div>
+          <div class="video-card-sub">Execuluxe · Meta Reel</div>
+        </div>
+      </div>
+      <!-- Uploaded video 2 -->
+      <div class="video-card" onclick="toggleVideo(this)">
+        <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline preload="metadata"></video>
+        <div class="video-overlay"></div>
+        <div class="video-play-btn"><div class="play-triangle"></div></div>
+        <div class="video-card-info">
+          <div class="video-card-title">Screen Record Ad — Lifestyle</div>
+          <div class="video-card-sub">Execuluxe · Instagram Story</div>
+        </div>
+      </div>
+      <!-- Proof card -->
+      <div class="video-card" style="cursor:default;">
+        <div style="padding:40px;display:flex;flex-direction:column;gap:20px;justify-content:center;height:100%;position:relative;z-index:2;">
+          <div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--exec-amber);">Campaign Results</div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--exec-amber);line-height:1;">6.24×</div>
+            <div style="font-size:12px;color:var(--smoke);margin-top:4px;">Return on Ad Spend</div>
+          </div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--exec-amber);line-height:1;">$9,366</div>
+            <div style="font-size:12px;color:var(--smoke);margin-top:4px;">Revenue Generated</div>
+          </div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--exec-amber);line-height:1;">$1,500</div>
+            <div style="font-size:12px;color:var(--smoke);margin-top:4px;">Total Ad Spend</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quote -->
+  <div class="quote-block reveal">
+    <div class="quote-inner">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">"Every dollar in ad spend had to justify itself — when your product costs $669, you can't afford to guess. We built a campaign architecture that matched the product's luxury positioning, and the ROAS proved it: 6× returns in 30 days is not luck, it's structure."</div>
+      <div class="quote-attr">— Echobroad Agency · <span>Campaign Strategy Notes, Execuluxe Campaign</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SEPARATOR -->
+<div class="sep"></div>
+
+<!-- ══════════════════════════════════════════════
+     CASE STUDY 02 — ELYSIAN PARFUM
+══════════════════════════════════════════════ -->
+<div class="case-wrapper ely-bg ely">
+
+  <!-- Header -->
+  <div class="case-header" style="position:relative;">
+    <div class="case-number">02</div>
+    <div class="reveal">
+      <div class="case-client-tag">Case Study 02 · Artisan Fragrance · USA</div>
+      <div class="case-brand-name">Elysian Parfum</div>
+      <p class="case-brand-desc">
+        Atlanta-based award-winning indie fragrance house founded by perfumer Jessi Park in 2021. 
+        Every bottle is handcrafted in small batches using fine naturals. Winner of 
+        <strong style="color:#f0d8df">Best New Fragrance 2024</strong> (New You Beauty Awards) for Lavender Milk Tea. 
+        Products range from <strong style="color:#f0d8df">$32 discovery sets to $120+ full bottles</strong> — 
+        a unique AOV challenge requiring a multi-offer ad strategy.
+      </p>
+    </div>
+    <div class="case-meta-col reveal in-delay-2">
+      <div class="case-meta-item">
+        <div class="case-meta-key">Campaign Platform</div>
+        <div class="case-meta-val">Facebook &amp; Instagram (Meta)</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-key">Campaign Duration</div>
+        <div class="case-meta-val">30 Days — December 2023</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-key">Product Price Point</div>
+        <div class="case-meta-val">$32 Discovery Sets → $120 Full Bottles</div>
+      </div>
+      <div class="case-meta-item">
+        <div class="case-meta-key">Target Market</div>
+        <div class="case-meta-val">Fragrance Enthusiasts, USA, Ages 22–45</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Metrics Bar -->
+  <div class="metrics-bar reveal">
+    <div class="metric-cell">
+      <div class="metric-key">Total Ad Spend</div>
+      <div class="metric-val">$1,200</div>
+      <div class="metric-sub">30-day campaign</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-key">Total Revenue</div>
+      <div class="metric-val">$6,480</div>
+      <div class="metric-sub">Direct attributable sales</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-key">ROAS</div>
+      <div class="metric-val">5.4×</div>
+      <div class="metric-sub">Return on ad spend</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-key">Units Sold</div>
+      <div class="metric-val">78</div>
+      <div class="metric-sub">Bottles &amp; discovery sets</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-key">Avg Order Value</div>
+      <div class="metric-val">$83</div>
+      <div class="metric-sub">Per transaction</div>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="case-body">
+    <div class="case-col reveal">
+      <div class="case-col-head">The Challenge</div>
+      <h3 class="case-col-h3">Scaling an artisan brand without losing its soul</h3>
+      <p>Elysian Parfum had built genuine product love and a small but loyal fanbase through organic content. The fragrances were <strong>award-winning</strong> — but the brand's reach was limited to people who stumbled onto them.</p>
+      <p>The challenge: fragrance is <strong>impossible to demo online</strong>. You can't smell an ad. Conversion depends entirely on emotional storytelling, social proof, and the power of your creative to make someone <em>feel</em> the scent before they buy it.</p>
+      <p>Additionally, the product range spanned from a low-entry discovery set ($32) up to full bottles ($120+), requiring different creative and CTA strategies per price point.</p>
+    </div>
+    <div class="case-col reveal in-delay-2">
+      <div class="case-col-head">Our Strategy</div>
+      <h3 class="case-col-h3">Sensory storytelling meets data-driven targeting</h3>
+      <ul class="bullet-list">
+        <li><strong>Sensory-evocative video creative</strong> — close-up shots of bottles, liquid, application, atmospheric lighting. If you can't smell it, make them feel it visually</li>
+        <li><strong>Discovery Set as the lead offer</strong> — low-risk entry point ($32) drove first-time buyers, with retargeting pushing full-bottle upsells</li>
+        <li><strong>Award angle</strong> — "Best New Fragrance 2024" headline hook grabbed instant credibility in the first 2 seconds of every ad</li>
+        <li><strong>Review-led social proof</strong> — customer testimonials embedded in ad copy; scent descriptions written in visceral, poetic language matching the brand's voice</li>
+        <li><strong>Fragrance interest + gifting audience targeting</strong> capitalised on Q4 gift-buying season</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Strategy Steps -->
+  <div class="case-body-full reveal">
+    <div class="case-col-head" style="margin-bottom:24px;">Campaign Architecture — 3-Phase Funnel</div>
+    <div class="strategy-grid">
+      <div class="strategy-cell">
+        <div class="strategy-cell-num">01</div>
+        <div class="strategy-cell-title">Hook — Lead with the Award</div>
+        <div class="strategy-cell-text">Cold traffic ads led with "Best New Fragrance 2024" — instant credibility for an indie brand. Targeting: perfume lovers, niche fragrance communities, luxury lifestyle interests, ages 22–45 USA.</div>
+      </div>
+      <div class="strategy-cell">
+        <div class="strategy-cell-num">02</div>
+        <div class="strategy-cell-title">Entry Offer — Discovery Set</div>
+        <div class="strategy-cell-text">The $32 discovery set was the conversion engine. Low barrier to entry. Comes with $55 off a full bottle — self-funding the next purchase. Retargeting pushed full-bottle buyers who sampled first.</div>
+      </div>
+      <div class="strategy-cell">
+        <div class="strategy-cell-num">03</div>
+        <div class="strategy-cell-title">Scale — Upsell Full Bottles</div>
+        <div class="strategy-cell-text">Discovery purchasers were retargeted with full-bottle creatives. Copy acknowledged their trial purchase and pushed the upgrade. Result: LTV multiplied beyond the initial ad conversion.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Before & After -->
+  <div class="ba-section reveal">
+    <div class="case-col-head">Before &amp; After — The Echobroad Effect</div>
+    <div class="ba-grid" style="position:relative;">
+      <div class="ba-card ba-card--before">
+        <div class="ba-label"><span class="ba-label-dot"></span> Before Echobroad</div>
+        <div class="ba-metric-row">
+          <div class="ba-row">
+            <div class="ba-row-label">Monthly Ad Spend</div>
+            <div class="ba-row-val">$0</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Paid Sales / Month</div>
+            <div class="ba-row-val">0 units</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">ROAS</div>
+            <div class="ba-row-val">N/A</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">New Customer Reach</div>
+            <div class="ba-row-val">Organic Only</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Discovery Set Funnel</div>
+            <div class="ba-row-val">Not Running</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Monthly Ad Revenue</div>
+            <div class="ba-row-val">$0</div>
+          </div>
+        </div>
+      </div>
+      <div class="ba-arrow">→</div>
+      <div class="ba-card ba-card--after">
+        <div class="ba-label"><span class="ba-label-dot"></span> After Echobroad — 30 Days</div>
+        <div class="ba-metric-row">
+          <div class="ba-row">
+            <div class="ba-row-label">Total Ad Spend</div>
+            <div class="ba-row-val">$1,200</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Paid Sales</div>
+            <div class="ba-row-val">78 units</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">ROAS</div>
+            <div class="ba-row-val">5.4×</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">New Customer Reach</div>
+            <div class="ba-row-val">40,000+ Impressions</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Discovery → Full Funnel</div>
+            <div class="ba-row-val">Fully Active</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-row-label">Monthly Ad Revenue</div>
+            <div class="ba-row-val">$6,480</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Proof -->
+  <div class="video-section reveal">
+    <div class="case-col-head">Video Ad Proof — Live Campaign Creatives</div>
+    <div class="video-grid">
+      <div class="video-card" onclick="toggleVideo(this)">
+        <video src="https://www.w3schools.com/html/mov_bbb.mp4" loop muted playsinline preload="metadata"></video>
+        <div class="video-overlay"></div>
+        <div class="video-play-btn"><div class="play-triangle"></div></div>
+        <div class="video-card-info">
+          <div class="video-card-title">Brand Reel — Sensory Creative</div>
+          <div class="video-card-sub">Elysian Parfum · Meta Reel</div>
+        </div>
+      </div>
+      <div class="video-card" style="cursor:default;">
+        <div style="padding:36px;display:flex;flex-direction:column;gap:18px;justify-content:center;height:100%;position:relative;z-index:2;">
+          <div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--elysian-rose);">Ad Performance</div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:var(--elysian-rose);line-height:1;">5.4×</div>
+            <div style="font-size:11px;color:var(--smoke);margin-top:4px;">ROAS Achieved</div>
+          </div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:var(--elysian-rose);line-height:1;">78</div>
+            <div style="font-size:11px;color:var(--smoke);margin-top:4px;">Units Sold</div>
+          </div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:var(--elysian-rose);line-height:1;">$6,480</div>
+            <div style="font-size:11px;color:var(--smoke);margin-top:4px;">Revenue in 30 Days</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-card" style="cursor:default;background:rgba(201,119,142,0.05);">
+        <div style="padding:36px;display:flex;flex-direction:column;justify-content:space-between;height:100%;position:relative;z-index:2;">
+          <div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--elysian-rose);">Why It Worked</div>
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <div style="border-left:2px solid var(--elysian-rose);padding-left:16px;">
+              <div style="font-size:12px;font-weight:600;color:var(--paper);margin-bottom:4px;">Award Credibility Hook</div>
+              <div style="font-size:11px;color:var(--smoke);line-height:1.6;">"Best New Fragrance 2024" stopped the scroll instantly</div>
+            </div>
+            <div style="border-left:2px solid var(--elysian-rose);padding-left:16px;">
+              <div style="font-size:12px;font-weight:600;color:var(--paper);margin-bottom:4px;">Low-Risk Entry Offer</div>
+              <div style="font-size:11px;color:var(--smoke);line-height:1.6;">$32 discovery set removed purchase hesitation</div>
+            </div>
+            <div style="border-left:2px solid var(--elysian-rose);padding-left:16px;">
+              <div style="font-size:12px;font-weight:600;color:var(--paper);margin-bottom:4px;">Upsell Funnel</div>
+              <div style="font-size:11px;color:var(--smoke);line-height:1.6;">$55 coupon inside discovery sets drove full-bottle repeats</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quote -->
+  <div class="quote-block reveal">
+    <div class="quote-inner">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">"You cannot sell scent on social media — you can only sell a feeling. Every creative we built for Elysian Parfum was designed to make someone feel the fragrance before they could smell it. That emotional bridge is what converted 78 units in 30 days on a $1,200 budget."</div>
+      <div class="quote-attr">— Echobroad Agency · <span>Campaign Strategy Notes, Elysian Parfum Campaign</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SEPARATOR -->
+<div class="sep"></div>
+
+<!-- AGENCY OVERVIEW -->
+<div class="section">
+  <div class="section-eyebrow reveal">Why Echobroad</div>
+  <h2 class="section-h2 reveal">We are a Meta Ads agency that <em>only wins</em> when you win.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:50px;border:1px solid rgba(255,255,255,0.06);" class="reveal">
+    <div style="padding:48px 40px;border-right:1px solid rgba(255,255,255,0.06);">
+      <div style="font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:12px;">9+</div>
+      <div style="font-size:13px;color:var(--paper);font-weight:600;margin-bottom:8px;">Years in Meta Advertising</div>
+      <div style="font-size:13px;color:var(--smoke);line-height:1.7;">Deep expertise in Facebook and Instagram ad management — before and after every major algorithm change.</div>
+    </div>
+    <div style="padding:48px 40px;border-right:1px solid rgba(255,255,255,0.06);">
+      <div style="font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:12px;">50K+</div>
+      <div style="font-size:13px;color:var(--paper);font-weight:600;margin-bottom:8px;">Projects Delivered</div>
+      <div style="font-size:13px;color:var(--smoke);line-height:1.7;">From startup product launches to established brand campaigns — we've built a track record that speaks for itself.</div>
+    </div>
+    <div style="padding:48px 40px;">
+      <div style="font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:12px;">3–8×</div>
+      <div style="font-size:13px;color:var(--paper);font-weight:600;margin-bottom:8px;">Typical ROAS Range</div>
+      <div style="font-size:13px;color:var(--smoke);line-height:1.7;">For e-commerce and product brands running $1,000–$10,000/month in ad spend with our campaign management.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA SECTION -->
+<div id="consultation" class="cta-section">
+  <div class="cta-eyebrow">Ready to Grow?</div>
+  <h2 class="cta-h2">Let's Make Your Brand<br>the <em>Next Case Study.</em></h2>
+  <p class="cta-sub">You've seen what we did for Execuluxe and Elysian Parfum. Now let's talk about what we can do for your brand — custom strategy, zero fluff.</p>
+  <a href="https://www.echobroad.com" target="_blank" class="cta-btn">📞 Book a Free Consultation</a>
+  <a href="https://www.echobroad.com" target="_blank" class="cta-secondary">Or visit echobroad.com to learn more →</a>
+  <div class="cta-trust">
+    <div class="trust-item">
+      <span class="trust-num">30-Day</span>
+      <span class="trust-label">Campaign Turnaround</span>
+    </div>
+    <div style="width:1px;height:40px;background:#ddd;opacity:0.3;"></div>
+    <div class="trust-item">
+      <span class="trust-num">5×+</span>
+      <span class="trust-label">Average ROAS Target</span>
+    </div>
+    <div style="width:1px;height:40px;background:#ddd;opacity:0.3;"></div>
+    <div class="trust-item">
+      <span class="trust-num">100%</span>
+      <span class="trust-label">Data-Driven Creative</span>
+    </div>
+    <div style="width:1px;height:40px;background:#ddd;opacity:0.3;"></div>
+    <div class="trust-item">
+      <span class="trust-num">0</span>
+      <span class="trust-label">Lock-In Contracts</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Echo<span>broad</span> Agency</div>
+  <div class="footer-links">
+    <a href="https://www.echobroad.com" class="footer-link" target="_blank">echobroad.com</a>
+    <a href="#consultation" class="footer-link">Book Consultation</a>
+    <a href="https://execuluxe.com" class="footer-link" target="_blank">execuluxe.com</a>
+    <a href="https://elysianparfum.com" class="footer-link" target="_blank">elysianparfum.com</a>
+  </div>
+</footer>
+
+<script>
+// Scroll Reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => io.observe(el));
+
+// Video toggle
+function toggleVideo(card) {
+  const vid = card.querySelector('video');
+  const btn = card.querySelector('.video-play-btn');
+  if (!vid) return;
+  if (vid.paused) {
+    vid.play();
+    if (btn) btn.style.opacity = '0';
+  } else {
+    vid.pause();
+    if (btn) btn.style.opacity = '1';
+  }
+}
+
+// Animated metric counter
+function animateCounters() {
+  document.querySelectorAll('.metric-val').forEach(el => {
+    const text = el.textContent.trim();
+    const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+    if (isNaN(num) || num === 0) return;
+    const prefix = text.match(/^[^0-9]*/)[0];
+    const suffix = text.replace(/^[^0-9]*[0-9.,]+/, '');
+    let start = 0;
+    const duration = 1500;
+    const step = 16;
+    const increment = num / (duration / step);
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= num) {
+        el.textContent = prefix + text.replace(prefix, '').replace(suffix, '') + suffix;
+        clearInterval(timer);
+      } else {
+        const display = num < 10 ? start.toFixed(2) : Math.floor(start).toLocaleString();
+        el.textContent = prefix + display + suffix;
+      }
+    }, step);
+  });
+}
+
+// Trigger counter when metrics come into view
+const metricsObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      setTimeout(animateCounters, 300);
+      metricsObserver.disconnect();
+    }
+  });
+}, { threshold: 0.3 });
+const firstMetrics = document.querySelector('.metrics-bar');
+if (firstMetrics) metricsObserver.observe(firstMetrics);
+</script>
+</body>
+</html>
