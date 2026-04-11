@@ -1,47 +1,41 @@
 [
   {
     "id": 1,
-    "name": "TikTok Ads Mastery Blueprint",
-    "price": 10000,
+    "name": "TIKTOK ADS COURSE",
+    "title": "The Complete TikTok Ads Setup Guide",
+    "subtitle": "Step-by-Step Training to Launch Profitable TikTok Ads",
+    "price": 20000,
     "currency": "NGN",
-    "priceDisplay": "₦10,000",
-    "description": "Master TikTok advertising with our comprehensive blueprint. Learn how to create engaging TikTok ads that convert and drive real results for your business.",
+    "priceDisplay": "₦20,000",
+    "description": "Learn how to properly set up TikTok ads from scratch and launch campaigns that can generate leads, sales, and business growth. This course breaks down the ad setup process in a simple and practical way, so you can confidently create, structure, and run TikTok campaigns that actually perform.",
     "image": "/images/product-tiktok-ads-mastery.jpg",
     "category": "Digital Marketing",
     "featured": true
   },
   {
     "id": 2,
-    "name": "Google Search Ads Mastery Blueprint",
+    "name": "META ADS COURSE",
+    "title": "The Complete Meta Ads Setup Guide",
+    "subtitle": "Step-by-Step Training to Launch Profitable Meta Ads",
     "price": 20000,
     "currency": "NGN",
     "priceDisplay": "₦20,000",
-    "description": "Dominate Google Search with our proven Google Ads blueprint. Learn advanced strategies to maximize your ROI and get more customers from search advertising.",
-    "image": "/images/product-google-search-ads-mastery.jpg",
+    "description": "Master the complete setup process for Facebook and Instagram ads with this practical beginner-friendly training. You’ll learn how to structure campaigns the right way, avoid costly setup mistakes, and launch Meta ads designed to attract leads, drive conversions, and grow your business.",
+    "image": "/images/product-meta-ads-mastery.jpg",
     "category": "Digital Marketing",
     "featured": true
   },
   {
     "id": 3,
-    "name": "Social Media The New Money Selar",
-    "price": 5000,
+    "name": "GOOGLE ADS COURSE",
+    "title": "The Complete Google Ads Setup Guide",
+    "subtitle": "Step-by-Step Training to Launch Profitable Google Ads",
+    "price": 30000,
     "currency": "NGN",
-    "priceDisplay": "₦5,000",
-    "description": "Discover how social media has become the new money-making machine. Learn proven strategies to monetize your social media presence and turn followers into customers.",
-    "image": "/images/product1-social-media-the-new-money-making-machine.jpg",
-    "category": "Social Media",
-    "featured": true
-  },
-  {
-    "id": 4,
-    "name": "The Future of Marketing is Community",
-    "price": 3000,
-    "currency": "NGN",
-    "priceDisplay": "₦3,000",
-    "description": "Learn why community-driven marketing is the future. Build engaged communities around your brand and create lasting customer relationships that drive sustainable growth.",
-    "image": "/images/product-community-marketing.jpg",
-    "category": "Marketing Strategy",
+    "priceDisplay": "₦30,000",
+    "description": "This course teaches you how to correctly set up Google Ads campaigns so you can reach the right audience, drive quality traffic, and generate profitable results. From campaign structure to launch, you’ll learn the practical steps needed to run Google ads with more confidence and clarity.",
+    "image": "/images/product-google-search-ads-mastery.jpg",
+    "category": "Digital Marketing",
     "featured": true
   }
 ]
-
