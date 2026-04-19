@@ -3,1534 +3,999 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Echobroad Agency — Case Study: Execuluxe & Elysian Parfum</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1428796628934092');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1428796628934092&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+<title>Echobroad — Proven Results</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-
-/* ── TOKENS ── */
-:root {
-  --void:       #060608;
-  --ink:        #0e0e12;
-  --surface:    #13131a;
-  --border:     rgba(255,255,255,0.07);
-  --muted:      #5a5a6e;
-  --smoke:      #9898aa;
-  --light:      #e8e8f0;
-  --white:      #f8f8fc;
-
-  --gold:       #c9a84c;
-  --gold-dim:   rgba(201,168,76,0.15);
-  --gold-glow:  rgba(201,168,76,0.08);
-
-  --amber:      #c97c3a;
-  --amber-dim:  rgba(201,124,58,0.12);
-  --amber-pale: #f2dcc8;
-
-  --rose:       #b86478;
-  --rose-dim:   rgba(184,100,120,0.12);
-  --rose-pale:  #f2d0d8;
-
-  --success:    #3db87a;
-}
-
-,::before,*::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-
-body {
-  background: var(--void);
-  color: var(--light);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 400;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* grain overlay */
-body::before {
-  content:'';
-  position:fixed; inset:0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)' opacity='0.035'/%3E%3C/svg%3E");
-  pointer-events:none; z-index:9000;
-}
-
-/* ── TYPOGRAPHY ── */
-.f-display {
-  font-family: 'Fraunces', serif;
-  font-optical-sizing: auto;
-}
-.f-ui {
-  font-family: 'Space Grotesk', sans-serif;
-}
-.f-body { font-family: 'DM Sans', sans-serif; }
-
-/* ── NAV ── */
-.nav {
-  position: fixed; top:0; left:0; right:0; z-index:800;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 56px;
-  height: 64px;
-  background: rgba(6,6,8,0.82);
-  backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-logo {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-size: 17px;
-  letter-spacing: 0.02em;
-  color: var(--white);
-}
-.nav-logo i { color: var(--gold); font-style:italic; }
-
-.nav-right { display:flex; align-items:center; gap:32px; }
-.nav-link {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:12px;
-  font-weight:500;
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  color:var(--smoke);
-  text-decoration:none;
-  transition:color .2s;
-}
-.nav-link:hover { color:var(--white); }
-
-.btn-primary {
-  display:inline-flex; align-items:center; gap:8px;
-  font-family:'Space Grotesk',sans-serif;
-  font-size:11px; font-weight:700;
-  letter-spacing:0.12em; text-transform:uppercase;
-  color:var(--void);
-  background:var(--gold);
-  padding:11px 28px;
-  text-decoration:none;
-  transition:all .25s;
-  border:none; cursor:pointer;
-}
-.btn-primary:hover { background:#dbb95a; transform:translateY(-2px); box-shadow:0 8px 30px rgba(201,168,76,0.35); }
-
-/* ── HERO ── */
-.hero {
-  min-height:100vh;
-  padding-top:64px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero-glow {
-  position:absolute;
-  width:800px; height:800px;
-  background:radial-gradient(circle, rgba(201,168,76,0.055) 0%, transparent 65%);
-  top:50%; left:25%; transform:translate(-50%,-50%);
-  pointer-events:none;
-}
-
-.hero-left {
-  display:flex; flex-direction:column; justify-content:center;
-  padding:80px 56px 80px 80px;
-  position:relative; z-index:2;
-}
-
-.hero-eyebrow {
-  display:flex; align-items:center; gap:12px;
-  font-family:'Space Grotesk',sans-serif;
-  font-size:10px; font-weight:700;
-  letter-spacing:0.3em; text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:32px;
-  opacity:0; animation:up .9s cubic-bezier(.16,1,.3,1) .1s forwards;
-}
-.hero-eyebrow span { display:inline-block; width:28px; height:1px; background:var(--gold); }
-
-.hero-h1 {
-  font-family:'Fraunces',serif;
-  font-size:clamp(50px,6.5vw,88px);
-  font-weight:900;
-  line-height:.95;
-  letter-spacing:-.03em;
-  color:var(--white);
-  margin-bottom:28px;
-  opacity:0; animation:up .9s cubic-bezier(.16,1,.3,1) .25s forwards;
-}
-.hero-h1 em { color:var(--gold); font-style:italic; }
-
-.hero-p {
-  font-size:15px; line-height:1.85;
-  color:var(--smoke); max-width:420px;
-  margin-bottom:52px;
-  opacity:0; animation:up .9s cubic-bezier(.16,1,.3,1) .4s forwards;
-}
-
-.hero-proof {
-  display:flex; gap:48px;
-  opacity:0; animation:up .9s cubic-bezier(.16,1,.3,1) .55s forwards;
-}
-
-.hero-proof-item {}
-.hero-proof-num {
-  font-family:'Fraunces',serif;
-  font-size:42px; font-weight:700; line-height:1;
-  color:var(--gold); margin-bottom:5px;
-}
-.hero-proof-label {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:600;
-  letter-spacing:0.25em; text-transform:uppercase;
-  color:var(--muted);
-}
-
-.hero-right {
-  display:grid; grid-template-rows:1fr 1fr;
-  border-left:1px solid var(--border);
-}
-
-.hero-brand-tile {
-  position:relative; overflow:hidden;
-  display:flex; flex-direction:column; justify-content:flex-end;
-  padding:44px 48px;
-  opacity:0; animation:fade .9s ease .6s forwards;
-}
-.hero-brand-tile + .hero-brand-tile { border-top:1px solid var(--border); }
-
-.tile-bg {
-  position:absolute; inset:0;
-  background-size:cover; background-position:center;
-  filter:grayscale(20%) brightness(.45);
-  transition:transform 6s ease;
-}
-.hero-brand-tile:hover .tile-bg { transform:scale(1.04); }
-
-.tile-gradient {
-  position:absolute; inset:0;
-  pointer-events:none;
-}
-.tile-gradient--exec { background:linear-gradient(135deg, rgba(201,124,58,.18) 0%, rgba(6,6,8,.9) 60%); }
-.tile-gradient--ely  { background:linear-gradient(135deg, rgba(184,100,120,.18) 0%, rgba(6,6,8,.9) 60%); }
-
-.tile-content { position:relative; z-index:2; }
-.tile-chip {
-  display:inline-flex; align-items:center; gap:6px;
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:700;
-  letter-spacing:0.25em; text-transform:uppercase;
-  margin-bottom:10px;
-}
-.tile-chip--exec { color:var(--amber); }
-.tile-chip--ely  { color:var(--rose); }
-.tile-dot { width:5px; height:5px; border-radius:50%; background:currentColor; }
-
-.tile-name {
-  font-family:'Fraunces',serif;
-  font-size:32px; font-weight:900;
-  letter-spacing:-.02em; color:var(--white);
-}
-
-/* ── COMBINED STATS BANNER ── */
-.stats-banner {
-  background:var(--surface);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  display:grid; grid-template-columns:repeat(4,1fr);
-}
-
-.stat-cell {
-  padding:44px 40px;
-  border-right:1px solid var(--border);
-  position:relative; overflow:hidden;
-}
-.stat-cell:last-child { border-right:none; }
-.stat-cell::after {
-  content:''; position:absolute; bottom:0; left:0;
-  width:0; height:2px; background:var(--gold);
-  transition:width .5s ease;
-}
-.stat-cell:hover::after { width:100%; }
-
-.stat-label {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:700;
-  letter-spacing:0.3em; text-transform:uppercase;
-  color:var(--muted); margin-bottom:14px;
-}
-.stat-num {
-  font-family:'Fraunces',serif;
-  font-size:clamp(34px,3.5vw,50px); font-weight:700;
-  line-height:1; color:var(--gold); margin-bottom:6px;
-}
-.stat-sub {
-  font-size:12px; color:var(--muted);
-}
-
-/* ── SECTION SHELL ── */
-.case-shell {
-  width:100vw; position:relative;
-  left:50%; transform:translateX(-50%);
-}
-.case-shell--exec { background:var(--ink); }
-.case-shell--ely  { background:#0b090e; }
-
-.case-inner { max-width:1360px; margin:0 auto; padding:0 72px; }
-
-/* ── CASE HEADER ── */
-.case-head {
-  padding:100px 0 64px;
-  display:grid; grid-template-columns:1.3fr 1fr;
-  gap:80px; align-items:end;
-  border-bottom:1px solid var(--border);
-  position:relative;
-}
-
-.bg-num {
-  font-family:'Fraunces',serif;
-  font-size:240px; font-weight:900;
-  position:absolute; right:-20px; top:30px;
-  opacity:.025; line-height:1;
-  user-select:none; pointer-events:none;
-  color:var(--white);
-}
-
-.case-chip {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:700;
-  letter-spacing:.3em; text-transform:uppercase;
-  margin-bottom:18px;
-}
-.exec .case-chip { color:var(--amber); }
-.ely  .case-chip { color:var(--rose); }
-
-.case-name {
-  font-family:'Fraunces',serif;
-  font-size:clamp(56px,7vw,104px);
-  font-weight:900; line-height:.88;
-  letter-spacing:-.03em; color:var(--white);
-  margin-bottom:20px;
-}
-
-.case-tagline {
-  font-family:'Fraunces',serif;
-  font-size:18px; font-style:italic;
-  font-weight:300; color:var(--smoke);
-  margin-bottom:20px; line-height:1.5;
-}
-
-.case-desc {
-  font-size:14px; line-height:1.9; color:var(--muted);
-  max-width:480px;
-}
-.case-desc strong { color:var(--light); font-weight:500; }
-
-.case-meta { display:flex; flex-direction:column; gap:22px; }
-.case-meta-row {}
-.cm-key {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:600;
-  letter-spacing:.25em; text-transform:uppercase;
-  color:var(--muted); margin-bottom:5px;
-}
-.cm-val {
-  font-size:14px; font-weight:600; color:var(--light);
-}
-
-/* ── METRICS STRIP ── */
-.metrics-strip {
-  display:grid; grid-template-columns:repeat(5,1fr);
-  border-bottom:1px solid var(--border);
-}
-
-.mc {
-  padding:44px 36px;
-  border-right:1px solid var(--border);
-  position:relative; overflow:hidden;
-  transition:background .3s;
-}
-.mc:last-child { border-right:none; }
-.mc:hover { background:rgba(255,255,255,0.02); }
-
-.mc::before {
-  content:''; position:absolute;
-  top:0; left:0; right:0; height:2px;
-}
-.exec .mc::before { background:linear-gradient(to right, var(--amber), transparent); }
-.ely  .mc::before { background:linear-gradient(to right, var(--rose), transparent); }
-
-.mc-key {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:8px; font-weight:700;
-  letter-spacing:.3em; text-transform:uppercase;
-  color:var(--muted); margin-bottom:16px;
-}
-.mc-val {
-  font-family:'Fraunces',serif;
-  font-size:clamp(26px,3vw,40px);
-  font-weight:700; line-height:1; margin-bottom:6px;
-}
-.exec .mc-val { color:var(--amber); }
-.ely  .mc-val { color:var(--rose); }
-
-.mc-note { font-size:11px; color:var(--muted); }
-
-/* ── TWO-COL BODY ── */
-.two-col {
-  padding:72px 0;
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:64px; border-bottom:1px solid var(--border);
-}
-
-.col-eyebrow {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:700;
-  letter-spacing:.3em; text-transform:uppercase;
-  margin-bottom:20px; padding-bottom:16px;
-  border-bottom:1px solid var(--border);
-}
-.exec .col-eyebrow { color:var(--amber); }
-.ely  .col-eyebrow { color:var(--rose); }
-
-.col-h3 {
-  font-family:'Fraunces',serif;
-  font-size:24px; font-weight:700;
-  line-height:1.2; margin-bottom:18px;
-  color:var(--white);
-}
-
-.col-p {
-  font-size:13.5px; line-height:1.9; color:var(--smoke);
-  margin-bottom:14px;
-}
-.col-p strong { color:var(--light); font-weight:500; }
-
-.check-list { list-style:none; display:flex; flex-direction:column; gap:13px; margin-top:4px; }
-.check-list li {
-  font-size:13px; line-height:1.75; color:var(--smoke);
-  padding-left:22px; position:relative;
-}
-.check-list li::before {
-  content:'→'; position:absolute; left:0;
-  font-size:11px; top:3px;
-}
-.exec .check-list li::before { color:var(--amber); }
-.ely  .check-list li::before { color:var(--rose); }
-.check-list li strong { color:var(--light); font-weight:500; }
-
-/* ── STRATEGY STEPS ── */
-.strategy-row {
-  padding:0 0 72px;
-  border-bottom:1px solid var(--border);
-}
-
-.strategy-eyebrow {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:700;
-  letter-spacing:.3em; text-transform:uppercase;
-  margin-bottom:32px;
-}
-.exec .strategy-eyebrow { color:var(--amber); }
-.ely  .strategy-eyebrow { color:var(--rose); }
-
-.steps { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
-
-.step {
-  padding:44px 38px;
-  background:var(--ink);
-  position:relative; overflow:hidden;
-  transition:background .3s;
-}
-.case-shell--ely .step { background:#0b090e; }
-.step:hover { background:rgba(255,255,255,0.02); }
-
-.step-n {
-  font-family:'Fraunces',serif;
-  font-size:64px; font-weight:900;
-  line-height:1; margin-bottom:18px;
-  opacity:.06; color:var(--white);
-}
-
-.step-title {
-  font-size:13px; font-weight:600;
-  color:var(--light); margin-bottom:10px;
-}
-.step-text {
-  font-size:12.5px; line-height:1.85; color:var(--smoke);
-}
-
-/* ── BEFORE / AFTER ── */
-.ba-row {
-  padding:72px 0;
-  border-bottom:1px solid var(--border);
-}
-
-.ba-eyebrow {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:700;
-  letter-spacing:.3em; text-transform:uppercase;
-  margin-bottom:32px;
-}
-.exec .ba-eyebrow { color:var(--amber); }
-.ely  .ba-eyebrow { color:var(--rose); }
-
-.ba-grid {
-  display:grid; grid-template-columns:1fr auto 1fr;
-  align-items:center; gap:0;
-  border:1px solid var(--border);
-}
-
-.ba-side { padding:48px 44px; }
-.ba-side--before { border-right:1px solid var(--border); }
-.ba-side--after  { border-left:1px solid var(--border); }
-
-.ba-side-label {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:700;
-  letter-spacing:.25em; text-transform:uppercase;
-  margin-bottom:28px;
-  display:flex; align-items:center; gap:8px;
-}
-.ba-side--before .ba-side-label { color:var(--muted); }
-.exec .ba-side--after .ba-side-label { color:var(--amber); }
-.ely  .ba-side--after .ba-side-label { color:var(--rose); }
-
-.ba-dot { width:6px; height:6px; border-radius:50%; background:currentColor; }
-
-.ba-item {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:14px 0; border-bottom:1px solid rgba(255,255,255,.04);
-}
-.ba-item:last-child { border-bottom:none; }
-
-.ba-item-label {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:600;
-  letter-spacing:.15em; text-transform:uppercase;
-  color:var(--muted);
-}
-
-.ba-item-val {
-  font-family:'Fraunces',serif;
-  font-size:17px; font-weight:700;
-}
-.ba-side--before .ba-item-val { color:var(--muted); }
-.exec .ba-side--after .ba-item-val { color:var(--amber); }
-.ely  .ba-side--after .ba-item-val { color:var(--rose); }
-
-.ba-arrow-col {
-  width:72px; display:flex; align-items:center; justify-content:center;
-}
-.ba-arrow-circle {
-  width:48px; height:48px; border-radius:50%;
-  background:var(--gold); color:var(--void);
-  display:flex; align-items:center; justify-content:center;
-  font-size:20px; font-weight:700;
-  box-shadow:0 0 32px rgba(201,168,76,.3);
-  flex-shrink:0;
-}
-
-/* ── VIDEO PROOF ── */
-.video-row {
-  padding:72px 0;
-  border-bottom:1px solid var(--border);
-}
-
-.video-eyebrow {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:700;
-  letter-spacing:.3em; text-transform:uppercase;
-  margin-bottom:32px;
-}
-.exec .video-eyebrow { color:var(--amber); }
-.ely  .video-eyebrow { color:var(--rose); }
-
-.video-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:14px;
-}
-
-.vcard {
-  position:relative; overflow:hidden;
-  aspect-ratio:9/16;
-  background:var(--surface);
-  border:1px solid var(--border);
-  cursor:pointer;
-  transition:border-color .3s, transform .3s;
-}
-.exec .vcard:hover { border-color:var(--amber); transform:scale(1.01); }
-.ely  .vcard:hover { border-color:var(--rose);  transform:scale(1.01); }
-
-.vcard video {
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  object-fit:cover;
-}
-
-.vcard-shade {
-  position:absolute; inset:0;
-  background:linear-gradient(to top, rgba(6,6,8,.85) 0%, rgba(6,6,8,.1) 50%, transparent 100%);
-  z-index:1; pointer-events:none;
-}
-
-.vcard-play {
-  position:absolute; top:50%; left:50%;
-  transform:translate(-50%,-50%);
-  width:56px; height:56px; border-radius:50%;
-  background:rgba(255,255,255,.12);
-  backdrop-filter:blur(12px);
-  border:1.5px solid rgba(255,255,255,.35);
-  display:flex; align-items:center; justify-content:center;
-  z-index:2; transition:all .3s; pointer-events:none;
-}
-.vcard:hover .vcard-play { background:rgba(255,255,255,.22); transform:translate(-50%,-50%) scale(1.1); }
-.vcard.playing .vcard-play { opacity:0; }
-
-.play-tri {
-  width:0; height:0;
-  border-top:9px solid transparent;
-  border-bottom:9px solid transparent;
-  border-left:15px solid white;
-  margin-left:4px;
-}
-
-.vcard-info {
-  position:absolute; bottom:18px; left:18px; right:18px;
-  z-index:3;
-}
-.vcard-title { font-size:12px; font-weight:600; color:var(--white); margin-bottom:3px; }
-.vcard-sub {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:8px; font-weight:600; letter-spacing:.15em; text-transform:uppercase;
-  color:rgba(255,255,255,.45);
-}
-
-/* stat card (3rd slot) */
-.vcard-stat {
-  position:absolute; inset:0; z-index:2;
-  padding:36px 32px;
-  display:flex; flex-direction:column; justify-content:space-between;
-  cursor:default;
-}
-.vs-top {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:8px; font-weight:700;
-  letter-spacing:.25em; text-transform:uppercase;
-}
-.exec .vs-top { color:var(--amber); }
-.ely  .vs-top { color:var(--rose); }
-
-.vs-rows { display:flex; flex-direction:column; gap:20px; }
-.vs-row {}
-.vs-big {
-  font-family:'Fraunces',serif;
-  font-size:42px; font-weight:700;
-  line-height:1;
-}
-.exec .vs-big { color:var(--amber); }
-.ely  .vs-big { color:var(--rose); }
-.vs-label { font-size:11px; color:var(--muted); margin-top:3px; }
-
-/* ── QUOTE ── */
-.quote-row { padding:72px 0; }
-
-.quote-box {
-  padding:56px 60px;
-  border:1px solid var(--border);
-  position:relative; overflow:hidden;
-}
-.exec .quote-box { border-left:3px solid var(--amber); }
-.ely  .quote-box { border-left:3px solid var(--rose); }
-
-.qmark {
-  font-family:'Fraunces',serif;
-  font-size:120px; font-weight:900;
-  position:absolute; top:20px; left:44px;
-  opacity:.04; line-height:1; color:var(--white);
-  pointer-events:none;
-}
-
-.q-text {
-  font-family:'Fraunces',serif;
-  font-size:clamp(17px,2vw,24px);
-  font-style:italic; font-weight:300;
-  line-height:1.65; color:var(--light);
-  max-width:780px; margin-bottom:28px;
-  position:relative; z-index:2;
-}
-
-.q-attr {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:600;
-  letter-spacing:.2em; text-transform:uppercase;
-  color:var(--muted);
-}
-.exec .q-attr strong { color:var(--amber); }
-.ely  .q-attr strong { color:var(--rose); }
-
-/* ── AGENCY CLOSE ── */
-.agency-close {
-  padding:120px 72px;
-  max-width:1360px; margin:0 auto;
-}
-
-.ac-eyebrow {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:700;
-  letter-spacing:.3em; text-transform:uppercase;
-  color:var(--gold); margin-bottom:20px;
-  display:flex; align-items:center; gap:16px;
-}
-.ac-eyebrow::after { content:''; flex:0 0 36px; height:1px; background:var(--gold); }
-
-.ac-h2 {
-  font-family:'Fraunces',serif;
-  font-size:clamp(36px,4.5vw,64px);
-  font-weight:700; line-height:1.05;
-  letter-spacing:-.025em; color:var(--white);
-  margin-bottom:20px;
-}
-.ac-h2 em { color:var(--gold); font-style:italic; }
-
-.ac-sub {
-  font-size:15px; line-height:1.85; color:var(--smoke);
-  max-width:580px; margin-bottom:60px;
-}
-
-.ac-grid {
-  display:grid; grid-template-columns:repeat(3,1fr);
-  gap:1px; background:var(--border);
-  border:1px solid var(--border);
-}
-
-.ac-cell {
-  padding:44px 40px;
-  background:var(--ink);
-  transition:background .3s;
-}
-.ac-cell:hover { background:var(--surface); }
-
-.ac-cell-num {
-  font-family:'Fraunces',serif;
-  font-size:52px; font-weight:700;
-  color:var(--gold); line-height:1; margin-bottom:12px;
-}
-.ac-cell-title {
-  font-size:13px; font-weight:600;
-  color:var(--light); margin-bottom:10px;
-}
-.ac-cell-text {
-  font-size:12.5px; line-height:1.85; color:var(--smoke);
-}
-
-/* ── CTA ── */
-.cta-shell {
-  width:100vw; position:relative;
-  left:50%; transform:translateX(-50%);
-  background:var(--white);
-  padding:140px 72px;
-  text-align:center;
-  overflow:hidden;
-}
-
-.cta-deco {
-  position:absolute; top:0; left:50%; transform:translateX(-50%);
-  width:600px; height:4px;
-  background:linear-gradient(to right, transparent, var(--gold), transparent);
-}
-
-.cta-eyebrow {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:700;
-  letter-spacing:.35em; text-transform:uppercase;
-  color:#888; margin-bottom:28px; display:block;
-}
-
-.cta-h2 {
-  font-family:'Fraunces',serif;
-  font-size:clamp(48px,7vw,96px);
-  font-weight:900; line-height:.92;
-  letter-spacing:-.035em; color:var(--void);
-  margin-bottom:24px;
-}
-.cta-h2 em { color:var(--gold); font-style:italic; }
-
-.cta-p {
-  font-size:16px; line-height:1.8; color:#666;
-  max-width:500px; margin:0 auto 52px;
-}
-
-.cta-btn-wrap { display:flex; flex-direction:column; align-items:center; gap:16px; }
-
-.btn-cta {
-  display:inline-flex; align-items:center; gap:10px;
-  font-family:'Space Grotesk',sans-serif;
-  font-size:12px; font-weight:700;
-  letter-spacing:.15em; text-transform:uppercase;
-  color:var(--white); background:var(--void);
-  padding:20px 56px; text-decoration:none;
-  transition:all .3s;
-}
-.btn-cta:hover {
-  background:var(--gold); color:var(--void);
-  transform:translateY(-3px);
-  box-shadow:0 14px 48px rgba(201,168,76,.35);
-}
-
-.btn-ghost {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:10px; font-weight:600;
-  letter-spacing:.15em; text-transform:uppercase;
-  color:#999; text-decoration:none; transition:color .2s;
-}
-.btn-ghost:hover { color:var(--void); }
-
-.cta-pillars {
-  display:flex; justify-content:center;
-  align-items:center; gap:0;
-  margin-top:72px;
-  border-top:1px solid #e8e8e8;
-  border-bottom:1px solid #e8e8e8;
-}
-
-.pillar {
-  padding:32px 48px; text-align:center;
-  border-right:1px solid #e8e8e8;
-  flex:1;
-}
-.pillar:last-child { border-right:none; }
-
-.pillar-num {
-  font-family:'Fraunces',serif;
-  font-size:32px; font-weight:700;
-  color:var(--gold); display:block; margin-bottom:5px;
-}
-.pillar-label {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:8px; font-weight:700;
-  letter-spacing:.25em; text-transform:uppercase;
-  color:#aaa;
-}
-
-/* ── FOOTER ── */
-footer {
-  padding:36px 72px;
-  display:flex; justify-content:space-between; align-items:center;
-  border-top:1px solid var(--border);
-}
-
-.foot-logo {
-  font-family:'Fraunces',serif;
-  font-size:15px; font-weight:700;
-  color:var(--white);
-}
-.foot-logo i { color:var(--gold); font-style:italic; }
-
-.foot-links { display:flex; gap:28px; }
-.foot-link {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:600;
-  letter-spacing:.15em; text-transform:uppercase;
-  color:var(--muted); text-decoration:none; transition:color .2s;
-}
-.foot-link:hover { color:var(--white); }
-
-.foot-right {
-  font-family:'Space Grotesk',sans-serif;
-  font-size:9px; font-weight:600;
-  letter-spacing:.15em; text-transform:uppercase;
-  color:var(--muted);
-}
-
-/* ── SCROLL REVEAL ── */
-.r { opacity:0; transform:translateY(28px); transition:opacity .75s ease, transform .75s ease; }
-.r.v { opacity:1; transform:translateY(0); }
-.r.d1 { transition-delay:.1s; }
-.r.d2 { transition-delay:.2s; }
-.r.d3 { transition-delay:.3s; }
-.r.d4 { transition-delay:.4s; }
-
-/* ── KEYFRAMES ── */
-@keyframes up   { from{opacity:0;transform:translateY(36px)} to{opacity:1;transform:translateY(0)} }
-@keyframes fade { from{opacity:0} to{opacity:1} }
-
-/* ── RESPONSIVE ── */
-@media(max-width:1100px){
-  .hero{ grid-template-columns:1fr; }
-  .hero-right{ display:none; }
-  .hero-left{ padding:100px 40px 80px; }
-  .case-head{ grid-template-columns:1fr; gap:40px; }
-  .metrics-strip{ grid-template-columns:repeat(3,1fr); }
-  .two-col{ grid-template-columns:1fr; gap:40px; }
-  .ba-grid{ grid-template-columns:1fr; }
-  .ba-arrow-col{ display:none; }
-  .ba-side--after{ border-left:none; border-top:1px solid var(--border); }
-  .video-grid{ grid-template-columns:1fr 1fr; }
-  .steps{ grid-template-columns:1fr; }
-  .ac-grid{ grid-template-columns:1fr; }
-  .stats-banner{ grid-template-columns:repeat(2,1fr); }
-  .case-inner{ padding:0 32px; }
-  .agency-close{ padding:80px 32px; }
-  .cta-pillars{ flex-wrap:wrap; }
-  footer{ flex-direction:column; gap:20px; text-align:center; padding:32px; }
-}
-@media(max-width:680px){
-  .metrics-strip{ grid-template-columns:1fr 1fr; }
-  .video-grid{ grid-template-columns:1fr; }
-  .hero-proof{ flex-wrap:wrap; gap:28px; }
-  .nav{ padding:0 24px; }
-  .nav-link{ display:none; }
-  .cta-shell{ padding:80px 28px; }
-}
+  :root {
+    --black: #080808;
+    --dark: #0f0f0f;
+    --card: #141414;
+    --border: #222;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --gold-dim: rgba(201,168,76,0.15);
+    --white: #f5f0e8;
+    --muted: #888;
+    --green: #3ddc84;
+    --accent: #c9a84c;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NOISE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    background: rgba(8,8,8,0.9);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--white);
+  }
+
+  .logo span { color: var(--gold); font-style: italic; }
+
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  nav a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    max-width: 900px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 500px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  /* MEGA STATS */
+  .mega-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .mega-stat {
+    background: var(--black);
+    padding: 2.5rem 2rem;
+    transition: background 0.3s;
+  }
+
+  .mega-stat:hover { background: var(--dark); }
+
+  .mega-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .mega-stat-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* SECTION */
+  section {
+    padding: 6rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 4rem;
+  }
+
+  /* HERO CASE STUDY — VILLAGE HIDDEN IN IRON */
+  .hero-case {
+    background: var(--card);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2px;
+  }
+
+  .hero-case::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-case-inner {
+    padding: 4rem;
+  }
+
+  .case-badge {
+    display: inline-block;
+    background: var(--gold-dim);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .case-badge.green {
+    background: rgba(61,220,132,0.1);
+    border-color: rgba(61,220,132,0.3);
+    color: var(--green);
+  }
+
+  .hero-case-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+  }
+
+  .hero-case-sub {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-roas {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(5rem, 12vw, 10rem);
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 0.9;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+
+  .hero-roas-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    margin-top: 3rem;
+  }
+
+  .stat-box {
+    background: var(--dark);
+    padding: 1.8rem 1.5rem;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-num.gold { color: var(--gold); }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+  }
+
+  .case-card {
+    background: var(--card);
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .case-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .case-card:hover::after { opacity: 1; }
+  .case-card:hover { background: #191919; }
+
+  .case-card-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    transition: color 0.3s;
+  }
+
+  .case-card:hover .case-card-number { color: #333; }
+
+  .case-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+  }
+
+  .case-card-type {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .case-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+  }
+
+  .inline-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .inline-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .inline-stat-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .inline-stat-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .inline-stat-val.highlight {
+    color: var(--gold);
+    font-size: 1.1rem;
+  }
+
+  .big-number-card {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--gold-dim);
+    border: 1px solid rgba(201,168,76,0.2);
+    text-align: center;
+  }
+
+  .big-number-card .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .big-number-card .lbl {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 0.4rem;
+  }
+
+  .quote-block {
+    margin-top: 3rem;
+    padding: 2.5rem 3rem;
+    border-left: 3px solid var(--gold);
+    background: rgba(201,168,76,0.04);
+  }
+
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .quote-attr {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* FULL WIDTH STAT BAR */
+  .stat-bar {
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .stat-bar-item {
+    background: var(--card);
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+
+  .stat-bar-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-bar-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    padding: 8rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80vw;
+    height: 80vh;
+    background: radial-gradient(ellipse, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-title em { font-style: italic; color: var(--gold); }
+
+  .cta-sub {
+    color: var(--muted);
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  /* DIVIDER LINE */
+  .full-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 3rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+  }
+
+  footer .logo { font-size: 1.1rem; }
+
+  footer p {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* VERTICAL TEXT */
+  .vertical-label {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--border);
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+  }
+
+  /* NIGERIA FLAG BADGE */
+  .location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 1.5rem;
+  }
+
+  .flag { font-size: 1rem; }
+
+  /* CASE NUMBER LARGE */
+  .case-num-large {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-pill {
+    display: inline-block;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .mega-stats { grid-template-columns: repeat(2, 1fr); }
+    section { padding: 4rem 1.5rem; }
+    .two-col { grid-template-columns: 1fr; }
+    .stat-bar { grid-template-columns: repeat(2, 1fr); }
+    .hero-case-inner { padding: 2rem; }
+    .case-card { padding: 2rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .vertical-label { display: none; }
+    nav a { display: none; }
+  }
 </style>
 </head>
 <body>
 
-<!-- ═══ NAV ═══ -->
-<nav class="nav">
-  <div class="nav-logo f-display">Echo<i>broad</i></div>
-  <div class="nav-right">
-    <a href="#execuluxe" class="nav-link">Execuluxe</a>
-    <a href="#elysian" class="nav-link">Elysian</a>
-    <a href="#consultation" class="btn-primary">Book a Consultation</a>
-  </div>
+<!-- NAV -->
+<nav>
+  <div class="logo">Echo<span>broad</span></div>
+  <a href="https://calendly.com/daviduwak/echobroad-strategy">Apply to Work With Us →</a>
 </nav>
 
-<!-- ═══ HERO ═══ -->
-<section class="hero">
-  <div class="hero-glow"></div>
-
-  <div class="hero-left">
-    <div class="hero-eyebrow"><span></span>Meta Ads Case Study · Verified Results</div>
-    <h1 class="hero-h1">Real Spend.<br><em>Real Revenue.</em><br>Zero Guessing.</h1>
-    <p class="hero-p f-body">Inside two live campaigns Echobroad ran for luxury brands on Facebook and Instagram — with the actual numbers from Meta Ads Manager to back every claim.</p>
-    <div class="hero-proof">
-      <div class="hero-proof-item">
-        <div class="hero-proof-num f-display">$227K</div>
-        <div class="hero-proof-label f-ui">Revenue Generated</div>
-      </div>
-      <div class="hero-proof-item">
-        <div class="hero-proof-num f-display">601</div>
-        <div class="hero-proof-label f-ui">Total Purchases</div>
-      </div>
-      <div class="hero-proof-item">
-        <div class="hero-proof-num f-display">3.04×</div>
-        <div class="hero-proof-label f-ui">Blended ROAS</div>
-      </div>
-    </div>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Echobroad Agency · Verified Client Results</div>
+  <h1>Real Spend.<br><em>Real Revenue.</em><br>Zero Guessing.</h1>
+  <p class="hero-sub">Five campaigns. Five different clients. One agency consistently delivering results that speak louder than promises.</p>
+  <div class="location-badge">
+    <span class="flag">🇳🇬</span>
+    Port Harcourt, Nigeria · Operating Globally
   </div>
 
-  <div class="hero-right">
-    <div class="hero-brand-tile">
-      <div class="tile-bg" style="background-image:url('https://execuluxe.com/cdn/shop/files/IMG_1340.jpg')"></div>
-      <div class="tile-gradient tile-gradient--exec"></div>
-      <div class="tile-content">
-        <div class="tile-chip tile-chip--exec"><div class="tile-dot"></div>Case 01 · Luxury Accessories</div>
-        <div class="tile-name f-display">EXECULUXE</div>
-      </div>
+  <div class="mega-stats">
+    <div class="mega-stat">
+      <div class="mega-stat-num">$1B+</div>
+      <div class="mega-stat-label">Revenue Generated (USD)</div>
     </div>
-    <div class="hero-brand-tile">
-      <div class="tile-bg" style="background-image:url('https://elysianparfum.com/cdn/shop/files/lavender.jpg')"></div>
-      <div class="tile-gradient tile-gradient--ely"></div>
-      <div class="tile-content">
-        <div class="tile-chip tile-chip--ely"><div class="tile-dot"></div>Case 02 · Artisan Fragrance</div>
-        <div class="tile-name f-display">ELYSIAN PARFUM</div>
-      </div>
+    <div class="mega-stat">
+      <div class="mega-stat-num">8.42×</div>
+      <div class="mega-stat-label">Peak ROAS Achieved</div>
     </div>
-  </div>
-</section>
-
-<!-- ═══ COMBINED STATS ═══ -->
-<div class="stats-banner r">
-  <div class="stat-cell">
-    <div class="stat-label f-ui">Combined Ad Spend</div>
-    <div class="stat-num f-display" data-count="74921" data-prefix="$">$74,921</div>
-    <div class="stat-sub f-ui">Across both campaigns</div>
-  </div>
-  <div class="stat-cell">
-    <div class="stat-label f-ui">Total Revenue Generated</div>
-    <div class="stat-num f-display" data-count="227729" data-prefix="$">$227,729</div>
-    <div class="stat-sub f-ui">Attributed to Meta ads</div>
-  </div>
-  <div class="stat-cell">
-    <div class="stat-label f-ui">Total Purchases</div>
-    <div class="stat-num f-display" data-count="601">601</div>
-    <div class="stat-sub f-ui">Real buyers, real orders</div>
-  </div>
-  <div class="stat-cell">
-    <div class="stat-label f-ui">Blended ROAS</div>
-    <div class="stat-num f-display" data-count="3.04" data-suffix="×">3.04×</div>
-    <div class="stat-sub f-ui">Return on total spend</div>
+    <div class="mega-stat">
+      <div class="mega-stat-num">20K+</div>
+      <div class="mega-stat-label">Total Purchases Driven</div>
+    </div>
+    <div class="mega-stat">
+      <div class="mega-stat-num">9+</div>
+      <div class="mega-stat-label">Years on Meta Ads</div>
+    </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-     CASE 01 — EXECULUXE
-════════════════════════════════════════ -->
-<div id="execuluxe" class="case-shell case-shell--exec exec">
-<div class="case-inner">
+<!-- CASE STUDIES -->
+<div style="max-width:1400px; margin:0 auto; padding:0 4rem;" class="reveal">
 
-  <!-- Header -->
-  <div class="case-head r">
-    <div class="bg-num">01</div>
-    <div>
-      <div class="case-chip f-ui">Case Study 01 · Luxury Vegan Accessories · USA</div>
-      <div class="case-name f-display">Execuluxe</div>
-      <div class="case-tagline f-display">The rollerbrief built for the woman who doesn't slow down.</div>
-      <p class="case-desc f-body">
-        A Florida-based luxury brand making the only vegan leather rollerbrief that converts from structured tote to wheeled carry-on in seconds.
-        Crafted for professional women who refuse to choose between style and function.
-        <strong>Product price: $999. </strong>High-consideration, high-stakes advertising — every click had to count.
-      </p>
-    </div>
-    <div class="case-meta">
-      <div class="case-meta-row">
-        <div class="cm-key f-ui">Platform</div>
-        <div class="cm-val f-body">Facebook &amp; Instagram (Meta)</div>
-      </div>
-      <div class="case-meta-row">
-        <div class="cm-key f-ui">Campaign Duration</div>
-        <div class="cm-val f-body">Multi-month · Dec 2023</div>
-      </div>
-      <div class="case-meta-row">
-        <div class="cm-key f-ui">Product Price</div>
-        <div class="cm-val f-body">$999 per Rollerbrief</div>
-      </div>
-      <div class="case-meta-row">
-        <div class="cm-key f-ui">Target Audience</div>
-        <div class="cm-val f-body">Professional Women · USA · Ages 28–52</div>
-      </div>
-      <div class="case-meta-row">
-        <div class="cm-key f-ui">Campaign Goal</div>
-        <div class="cm-val f-body">Website Purchases &amp; Brand Awareness</div>
-      </div>
-    </div>
-  </div>
+  <div class="section-label">Verified Results · Five Clients · Four Countries</div>
 
-  <!-- Metrics -->
-  <div class="metrics-strip r">
-    <div class="mc">
-      <div class="mc-key f-ui">Total Ad Spend</div>
-      <div class="mc-val f-display">$51,785</div>
-      <div class="mc-note f-body">Verified from Meta Ads Manager</div>
-    </div>
-    <div class="mc">
-      <div class="mc-key f-ui">Website Purchases</div>
-      <div class="mc-val f-display">152</div>
-      <div class="mc-note f-body">Confirmed website conversions</div>
-    </div>
-    <div class="mc">
-      <div class="mc-key f-ui">Revenue Generated</div>
-      <div class="mc-val f-display">$151,848</div>
-      <div class="mc-note f-body">152 × $999 avg. product price</div>
-    </div>
-    <div class="mc">
-      <div class="mc-key f-ui">ROAS</div>
-      <div class="mc-val f-display">2.93×</div>
-      <div class="mc-note f-body">$151,848 ÷ $51,785</div>
-    </div>
-    <div class="mc">
-      <div class="mc-key f-ui">Avg. Cost per Purchase</div>
-      <div class="mc-val f-display">$268</div>
-      <div class="mc-note f-body">On a $999 product — strong CPA</div>
-    </div>
-  </div>
+  <!-- CASE 01 — VILLAGE HIDDEN IN IRON -->
+  <div class="hero-case reveal" style="margin-bottom:2px;">
+    <div class="hero-case-inner" style="position:relative;">
+      <div class="vertical-label">Case Study 01</div>
+      <div class="case-num-large">Case Study 01 · E-commerce · Fitness & Gym</div>
+      <div class="case-badge">🏆 Hero Campaign · USA Market</div>
+      <h2 class="hero-case-title">Village Hidden in Iron</h2>
+      <p class="hero-case-sub">Premium Fitness & Gym Equipment Brand · United States · 11-Month Partnership</p>
 
-  <!-- Challenge + Strategy -->
-  <div class="two-col r">
-    <div>
-      <div class="col-eyebrow f-ui">The Challenge</div>
-      <h3 class="col-h3 f-display">Selling a $999 bag to a stranger on social media</h3>
-      <p class="col-p f-body">A near-$1,000 product demands trust before it demands a purchase. Cold traffic on Meta won't simply buy — they need to be shown, convinced, and retargeted with precision before opening their wallets.</p>
-      <p class="col-p f-body">Execuluxe had the product, the reviews, and the brand story. What they lacked was a <strong>structured paid media system</strong> — no consistent ad spend, no funnel architecture, no video creative built to stop the scroll and drive clicks on a luxury price point.</p>
-      <p class="col-p f-body">The brief: build it from scratch, make it profitable, and prove it at scale.</p>
-    </div>
-    <div>
-      <div class="col-eyebrow f-ui">The Echobroad Strategy</div>
-      <h3 class="col-h3 f-display">Product-led video + layered audience targeting</h3>
-      <ul class="check-list f-body">
-        <li><strong>Hero video creative</strong> leading with the bag's signature transformation — tote to rollerbrief — designed to hook within the first 2 seconds of a Reel</li>
-        <li><strong>Pain-point copywriting:</strong> targeted the frustration of heavy bags, chaotic travel, and being forced to sacrifice elegance for function</li>
-        <li><strong>Cold interest stacks</strong> combining executive women, business travel, luxury fashion, and female entrepreneurs across the USA</li>
-        <li><strong>Warm retargeting</strong> re-engaged video viewers (50%+ watch) and product page visitors with social proof and urgency</li>
-        <li><strong>Q4 gifting season</strong> timing maximised purchase intent — self-gifting professionals and partners buying high-value gifts</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Strategy Steps -->
-  <div class="strategy-row r">
-    <div class="strategy-eyebrow f-ui">3-Phase Funnel Architecture</div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-n f-display">01</div>
-        <div class="step-title f-body">Awareness — Stop the Scroll</div>
-        <div class="step-text f-body">Short-form Reels and Stories targeting broad interest audiences of professional US women. Creative led with the bag transformation. KPI: 3-second view rate, video completion, CPM efficiency.</div>
-      </div>
-      <div class="step">
-        <div class="step-n f-display">02</div>
-        <div class="step-title f-body">Consideration — Build Desire</div>
-        <div class="step-text f-body">Retargeted warm audiences — video viewers and website visitors — with customer reviews, unboxing content, and lifestyle creatives. Pushed traffic to the product page with feature-focused messaging.</div>
-      </div>
-      <div class="step">
-        <div class="step-n f-display">03</div>
-        <div class="step-title f-body">Conversion — Close the Sale</div>
-        <div class="step-text f-body">Tight retargeting on cart abandoners and product page visitors. Urgency-led messaging around holiday shipping deadlines and bundle offers. Direct-to-checkout CTAs. Lowest CPA, highest intent audience.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Before / After -->
-  <div class="ba-row r">
-    <div class="ba-eyebrow f-ui">Before &amp; After · The Echobroad Effect</div>
-    <div class="ba-grid">
-      <div class="ba-side ba-side--before">
-        <div class="ba-side-label f-ui"><div class="ba-dot"></div>Before Echobroad</div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Monthly Ad Spend</span><span class="ba-item-val f-display">$0</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Paid Purchases</span><span class="ba-item-val f-display">0 units</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Revenue from Ads</span><span class="ba-item-val f-display">$0</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">ROAS</span><span class="ba-item-val f-display">N/A</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Retargeting Funnel</span><span class="ba-item-val f-display">None</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Brand Reach</span><span class="ba-item-val f-display">Organic Only</span></div>
-      </div>
-      <div class="ba-arrow-col"><div class="ba-arrow-circle">→</div></div>
-      <div class="ba-side ba-side--after">
-        <div class="ba-side-label f-ui"><div class="ba-dot"></div>After Echobroad Campaign</div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Total Ad Spend</span><span class="ba-item-val f-display">$51,785</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Paid Purchases</span><span class="ba-item-val f-display">152 units</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Revenue from Ads</span><span class="ba-item-val f-display">$151,848</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">ROAS</span><span class="ba-item-val f-display">2.93×</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Retargeting Funnel</span><span class="ba-item-val f-display">Fully Built</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Avg. Cost per Purchase</span><span class="ba-item-val f-display">$268.13</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Videos -->
-  <div class="video-row r">
-    <div class="video-eyebrow f-ui">Live Ad Creative Proof — Execuluxe Campaign</div>
-    <div class="video-grid">
-
-      <div class="vcard exec" onclick="playVid(this)">
-        <video src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663207493210/yQQkVinUjETfVsEZ.mp4" loop muted playsinline preload="metadata"></video>
-        <div class="vcard-shade"></div>
-        <div class="vcard-play"><div class="play-tri"></div></div>
-        <div class="vcard-info">
-          <div class="vcard-title f-body">Rollerbrief Demo — Hero Creative</div>
-          <div class="vcard-sub f-ui">Execuluxe · Facebook &amp; Instagram Reel</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:end;">
+        <div>
+          <div class="hero-roas">8.42×</div>
+          <div class="hero-roas-label">Return on Ad Spend · Verified from Meta Ads Manager</div>
+          <p style="color:var(--muted); font-size:0.9rem; line-height:1.8; max-width:400px;">A fitness brand that needed scale. We built an 11-month paid media system on Facebook and Instagram that turned $93,958 in ad spend into $791,127 in verified revenue — an 8.42× ROAS that puts this campaign among the top-performing e-commerce accounts in the fitness vertical.</p>
         </div>
-      </div>
-
-      <div class="vcard exec" onclick="playVid(this)">
-        <video src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663207493210/yQQkVinUjETfVsEZ.mp4" loop muted playsinline preload="metadata"></video>
-        <div class="vcard-shade"></div>
-        <div class="vcard-play"><div class="play-tri"></div></div>
-        <div class="vcard-info">
-          <div class="vcard-title f-body">Lifestyle Ad — Screen Reel</div>
-          <div class="vcard-sub f-ui">Execuluxe · Instagram Story</div>
-        </div>
-      </div>
-
-      <div class="vcard exec" style="cursor:default;">
-        <div class="vcard-shade" style="background:rgba(6,6,8,0.88)"></div>
-        <div class="vcard-stat">
-          <div class="vs-top f-ui">Verified Campaign Results</div>
-          <div class="vs-rows">
-            <div class="vs-row">
-              <div class="vs-big f-display">$51,785</div>
-              <div class="vs-label f-body">Total Ad Spend</div>
+        <div>
+          <div class="stats-grid" style="grid-template-columns:repeat(2,1fr);">
+            <div class="stat-box">
+              <div class="stat-num gold">$791,127</div>
+              <div class="stat-label">Revenue Generated</div>
             </div>
-            <div class="vs-row">
-              <div class="vs-big f-display">152</div>
-              <div class="vs-label f-body">Website Purchases</div>
+            <div class="stat-box">
+              <div class="stat-num gold">$93,958</div>
+              <div class="stat-label">Total Ad Spend</div>
             </div>
-            <div class="vs-row">
-              <div class="vs-big f-display">2.93×</div>
-              <div class="vs-label f-body">Return on Ad Spend</div>
+            <div class="stat-box">
+              <div class="stat-num">9,339</div>
+              <div class="stat-label">Purchases</div>
             </div>
-            <div class="vs-row">
-              <div class="vs-big f-display">$151,848</div>
-              <div class="vs-label f-body">Revenue Generated</div>
+            <div class="stat-box">
+              <div class="stat-num">11.6M</div>
+              <div class="stat-label">Impressions</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num">117,546</div>
+              <div class="stat-label">Link Clicks</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num">$0.80</div>
+              <div class="stat-label">Cost Per Click</div>
             </div>
           </div>
         </div>
       </div>
 
-    </div>
-  </div>
-
-  <!-- Quote -->
-  <div class="quote-row r">
-    <div class="quote-box">
-      <div class="qmark f-display">"</div>
-      <p class="q-text f-display">"Selling a $999 bag on Meta isn't about reach — it's about relevance. We built a funnel that found exactly the right women, showed them exactly the right creative, and retargeted until the sale was inevitable. 152 purchases at $268 CPA on a $999 product is the proof."</p>
-      <div class="q-attr f-ui">— Echobroad Agency · <strong>Execuluxe Campaign Strategy</strong></div>
-    </div>
-  </div>
-
-</div><!-- /case-inner -->
-</div><!-- /case-shell exec -->
-
-<!-- ════════════════════════════════════════
-     CASE 02 — ELYSIAN PARFUM
-════════════════════════════════════════ -->
-<div id="elysian" class="case-shell case-shell--ely ely">
-<div class="case-inner">
-
-  <!-- Header -->
-  <div class="case-head r">
-    <div class="bg-num">02</div>
-    <div>
-      <div class="case-chip f-ui">Case Study 02 · Artisan Fragrance House · USA</div>
-      <div class="case-name f-display">Elysian Parfum</div>
-      <div class="case-tagline f-display">Award-winning fragrances handcrafted in Atlanta, Georgia.</div>
-      <p class="case-desc f-body">
-        Founded in 2021 by perfumer Jessi Park, Elysian Parfum creates small-batch artisan fragrances using the finest naturals.
-        Winner of <strong>Best New Fragrance 2024</strong> at the New You Beauty Awards.
-        Every bottle is hand-filled, bottled, and shipped in-house.
-        <strong>Product price: $169. </strong>A brand built on emotion — and our ads had to make people <em>feel</em> a scent they couldn't smell.
-      </p>
-    </div>
-    <div class="case-meta">
-      <div class="case-meta-row">
-        <div class="cm-key f-ui">Platform</div>
-        <div class="cm-val f-body">Facebook &amp; Instagram (Meta)</div>
-      </div>
-      <div class="case-meta-row">
-        <div class="cm-key f-ui">Campaign Duration</div>
-        <div class="cm-val f-body">Multi-month · Dec 2023</div>
-      </div>
-      <div class="case-meta-row">
-        <div class="cm-key f-ui">Product Price</div>
-        <div class="cm-val f-body">$169 per Full Bottle</div>
-      </div>
-      <div class="case-meta-row">
-        <div class="cm-key f-ui">Target Audience</div>
-        <div class="cm-val f-body">Fragrance Enthusiasts · USA · Ages 22–48</div>
-      </div>
-      <div class="case-meta-row">
-        <div class="cm-key f-ui">Campaign Goal</div>
-        <div class="cm-val f-body">Website Purchases &amp; New Customer Acquisition</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Metrics -->
-  <div class="metrics-strip r">
-    <div class="mc">
-      <div class="mc-key f-ui">Total Ad Spend</div>
-      <div class="mc-val f-display">$23,136</div>
-      <div class="mc-note f-body">Verified from Meta Ads Manager</div>
-    </div>
-    <div class="mc">
-      <div class="mc-key f-ui">Website Purchases</div>
-      <div class="mc-val f-display">449</div>
-      <div class="mc-note f-body">Confirmed website conversions</div>
-    </div>
-    <div class="mc">
-      <div class="mc-key f-ui">Revenue Generated</div>
-      <div class="mc-val f-display">$75,881</div>
-      <div class="mc-note f-body">449 × $169 avg. product price</div>
-    </div>
-    <div class="mc">
-      <div class="mc-key f-ui">ROAS</div>
-      <div class="mc-val f-display">3.28×</div>
-      <div class="mc-note f-body">$75,881 ÷ $23,136</div>
-    </div>
-    <div class="mc">
-      <div class="mc-key f-ui">Avg. Cost per Purchase</div>
-      <div class="mc-val f-display">$46.50</div>
-      <div class="mc-note f-body">Exceptional CPA on $169 product</div>
-    </div>
-  </div>
-
-  <!-- Challenge + Strategy -->
-  <div class="two-col r">
-    <div>
-      <div class="col-eyebrow f-ui">The Challenge</div>
-      <h3 class="col-h3 f-display">You can't smell an ad. So we made people feel it.</h3>
-      <p class="col-p f-body">Fragrance is the most sensory-dependent product category in retail. You cannot demo a scent on Meta. Conversion lives entirely in <strong>emotional storytelling</strong> and the power of your creative to create desire without the primary sense.</p>
-      <p class="col-p f-body">Elysian had built genuine product love organically — an award-winning product, glowing reviews, and a deeply personal brand story. But their reach was limited to whoever stumbled upon them.</p>
-      <p class="col-p f-body">The mission: scale new customer acquisition on Meta while preserving the brand's intimate, artisan soul — and do it at a cost that made the numbers work.</p>
-    </div>
-    <div>
-      <div class="col-eyebrow f-ui">The Echobroad Strategy</div>
-      <h3 class="col-h3 f-display">Sensory storytelling + award credibility + volume efficiency</h3>
-      <ul class="check-list f-body">
-        <li><strong>"Best New Fragrance 2024"</strong> — leading every cold-traffic ad with the award hook gave an indie brand instant third-party credibility in the first 2 seconds</li>
-        <li><strong>Sensory visual language:</strong> close-up bottle shots, liquid pour, atmospheric candlelight — if you can't smell it, make every frame make you want to</li>
-        <li><strong>UGC-style creative</strong> leveraged real customer voices and authentic reviews to build trust with audiences unfamiliar with the brand</li>
-        <li><strong>Interest targeting</strong> into niche fragrance communities, luxury beauty, indie perfume lovers, and gifting audiences during Q4</li>
-        <li><strong>Retargeting upsell loop</strong> — visitors who sampled discovery sets were re-engaged with full-bottle creatives to compound LTV</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Strategy Steps -->
-  <div class="strategy-row r">
-    <div class="strategy-eyebrow f-ui">3-Phase Funnel Architecture</div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-n f-display">01</div>
-        <div class="step-title f-body">Hook — Lead with the Award</div>
-        <div class="step-text f-body">Every cold-traffic ad opened with "Best New Fragrance 2024" — an instant trust signal for a brand the audience had never heard of. Targeting: niche fragrance enthusiasts, luxury beauty, indie perfume communities, USA, 22–48.</div>
-      </div>
-      <div class="step">
-        <div class="step-n f-display">02</div>
-        <div class="step-title f-body">Volume — Maximise Purchases</div>
-        <div class="step-text f-body">At $169 per bottle, the price was premium but accessible. Creatives showed product beauty, customer reviews, and the brand story. The $46.50 CPA was achieved by targeting high-intent fragrance buyers who needed little convincing once shown the right creative.</div>
-      </div>
-      <div class="step">
-        <div class="step-n f-display">03</div>
-        <div class="step-title f-body">Scale — Compound LTV</div>
-        <div class="step-text f-body">Past buyers and warm audiences were retargeted with new scent launches and collection ads. Every new purchase added to the pool. The 449 purchases weren't just conversions — they were the foundation of a long-term repeat customer base.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Before / After -->
-  <div class="ba-row r">
-    <div class="ba-eyebrow f-ui">Before &amp; After · The Echobroad Effect</div>
-    <div class="ba-grid">
-      <div class="ba-side ba-side--before">
-        <div class="ba-side-label f-ui"><div class="ba-dot"></div>Before Echobroad</div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Monthly Ad Spend</span><span class="ba-item-val f-display">$0</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Paid Purchases</span><span class="ba-item-val f-display">0 units</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Revenue from Ads</span><span class="ba-item-val f-display">$0</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">ROAS</span><span class="ba-item-val f-display">N/A</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Paid Customer Reach</span><span class="ba-item-val f-display">Organic Only</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Cost per Purchase</span><span class="ba-item-val f-display">N/A</span></div>
-      </div>
-      <div class="ba-arrow-col"><div class="ba-arrow-circle">→</div></div>
-      <div class="ba-side ba-side--after">
-        <div class="ba-side-label f-ui"><div class="ba-dot"></div>After Echobroad Campaign</div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Total Ad Spend</span><span class="ba-item-val f-display">$23,136</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Paid Purchases</span><span class="ba-item-val f-display">449 units</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Revenue from Ads</span><span class="ba-item-val f-display">$75,881</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">ROAS</span><span class="ba-item-val f-display">3.28×</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">New Customers Reached</span><span class="ba-item-val f-display">449 buyers</span></div>
-        <div class="ba-item"><span class="ba-item-label f-ui">Cost per Purchase</span><span class="ba-item-val f-display">$46.50</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Videos -->
-  <div class="video-row r">
-    <div class="video-eyebrow f-ui">Live Ad Creative Proof — Elysian Parfum Campaign</div>
-    <div class="video-grid">
-
-      <div class="vcard ely" onclick="playVid(this)">
-        <video src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663207493210/xBCuRQSHsdVOhwHN.mp4" loop muted playsinline preload="metadata"></video>
-        <div class="vcard-shade"></div>
-        <div class="vcard-play"><div class="play-tri"></div></div>
-        <div class="vcard-info">
-          <div class="vcard-title f-body">UGC Ad — Hedonism Scent</div>
-          <div class="vcard-sub f-ui">Elysian Parfum · Instagram Reel</div>
-        </div>
-      </div>
-
-      <div class="vcard ely" onclick="playVid(this)">
-        <video src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663207493210/xBCuRQSHsdVOhwHN.mp4" loop muted playsinline preload="metadata"></video>
-        <div class="vcard-shade"></div>
-        <div class="vcard-play"><div class="play-tri"></div></div>
-        <div class="vcard-info">
-          <div class="vcard-title f-body">Brand Reel — Sensory Creative</div>
-          <div class="vcard-sub f-ui">Elysian Parfum · Facebook Feed</div>
-        </div>
-      </div>
-
-      <div class="vcard ely" style="cursor:default;">
-        <div class="vcard-shade" style="background:rgba(6,6,8,0.88)"></div>
-        <div class="vcard-stat">
-          <div class="vs-top f-ui">Verified Campaign Results</div>
-          <div class="vs-rows">
-            <div class="vs-row">
-              <div class="vs-big f-display">$23,136</div>
-              <div class="vs-label f-body">Total Ad Spend</div>
-            </div>
-            <div class="vs-row">
-              <div class="vs-big f-display">449</div>
-              <div class="vs-label f-body">Website Purchases</div>
-            </div>
-            <div class="vs-row">
-              <div class="vs-big f-display">3.28×</div>
-              <div class="vs-label f-body">Return on Ad Spend</div>
-            </div>
-            <div class="vs-row">
-              <div class="vs-big f-display">$46.50</div>
-              <div class="vs-label f-body">Cost per Purchase</div>
-            </div>
+      <div style="margin-top:3rem; padding-top:3rem; border-top:1px solid var(--border);">
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem;">
+          <div>
+            <div class="section-label" style="margin-bottom:1rem;">The Challenge</div>
+            <p style="font-size:0.88rem; color:var(--muted); line-height:1.8;">Village Hidden in Iron had a strong product line but lacked a structured paid media system to scale customer acquisition. They needed consistent volume, low CPC, and a retargeting engine that converted warm traffic into buyers.</p>
+          </div>
+          <div>
+            <div class="section-label" style="margin-bottom:1rem;">The Strategy</div>
+            <p style="font-size:0.88rem; color:var(--muted); line-height:1.8;">We deployed a three-phase funnel combining Advantage+ Shopping for cold acquisition, a conversion retargeting campaign for warm audiences, and ongoing creative testing. CPC was driven to $0.80 — exceptionally efficient for the fitness vertical.</p>
+          </div>
+          <div>
+            <div class="section-label" style="margin-bottom:1rem;">The Outcome</div>
+            <p style="font-size:0.88rem; color:var(--muted); line-height:1.8;">11 months of consistent results. A long-term retainer built on trust and compounding performance. The 8.42× ROAS means for every dollar invested, Village Hidden in Iron received $8.42 back in verified revenue.</p>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- Quote -->
-  <div class="quote-row r">
-    <div class="quote-box">
-      <div class="qmark f-display">"</div>
-      <p class="q-text f-display">"Fragrance advertising lives or dies on emotional resonance. Our creative made audiences feel the scent before they could buy it — and the 449 purchases at a $46.50 CPA on a $169 product proves that when you get the emotion right, the algorithm rewards you."</p>
-      <div class="q-attr f-ui">— Echobroad Agency · <strong>Elysian Parfum Campaign Strategy</strong></div>
+  <!-- CASES 02 & 03 -->
+  <div class="two-col reveal" style="margin-bottom:2px;">
+
+    <!-- CASE 02 — EXECULUXE -->
+    <div class="case-card">
+      <div class="case-num-large">Case Study 02 · Luxury Accessories · USA</div>
+      <div class="case-badge" style="margin-bottom:1.5rem;">High-Ticket E-commerce · $999 Product</div>
+      <h3 class="case-card-title">Execuluxe</h3>
+      <p class="case-card-type">Luxury Vegan Leather Accessories · Florida, USA</p>
+
+      <p style="font-size:0.85rem; color:var(--muted); line-height:1.8; margin-bottom:1.5rem;">Selling a $999 bag to a stranger on social media. We built a 3-phase funnel from scratch — hero video creative, cold interest stacks, warm retargeting — and turned $0 in paid revenue to $151,848.</p>
+
+      <div class="big-number-card">
+        <div class="num">2.93×</div>
+        <div class="lbl">Return on Ad Spend</div>
+      </div>
+
+      <div class="case-divider"></div>
+
+      <div class="inline-stats">
+        <div class="inline-stat">
+          <span class="inline-stat-label">Total Ad Spend</span>
+          <span class="inline-stat-val">$51,785</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Revenue Generated</span>
+          <span class="inline-stat-val highlight">$151,848</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Website Purchases</span>
+          <span class="inline-stat-val">152 units</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Avg. Cost per Purchase</span>
+          <span class="inline-stat-val">$268.13</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Product Price</span>
+          <span class="inline-stat-val">$999 / Rollerbrief</span>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem; padding:1rem 1.5rem; background:rgba(255,255,255,0.02); border:1px solid var(--border);">
+        <p style="font-size:0.8rem; color:var(--muted); font-style:italic; line-height:1.7;">"Selling a $999 bag on Meta isn't about reach — it's about relevance. We built a funnel that found exactly the right women and retargeted until the sale was inevitable."</p>
+        <p style="font-size:0.7rem; color:var(--gold); font-family:'DM Mono',monospace; letter-spacing:0.15em; text-transform:uppercase; margin-top:0.8rem;">— Echobroad Strategy Team</p>
+      </div>
+    </div>
+
+    <!-- CASE 03 — ELYSIAN PARFUM -->
+    <div class="case-card">
+      <div class="case-num-large">Case Study 03 · Artisan Fragrance · USA</div>
+      <div class="case-badge" style="margin-bottom:1.5rem;">Award-Winning Brand · Sensory Advertising</div>
+      <h3 class="case-card-title">Elysian Parfum</h3>
+      <p class="case-card-type">Handcrafted Artisan Fragrance · Atlanta, USA</p>
+
+      <p style="font-size:0.85rem; color:var(--muted); line-height:1.8; margin-bottom:1.5rem;">You can't smell an ad. So we made people feel it. Award-winning fragrance brand with 449 purchases at a $46.50 CPA on a $169 product — making every transaction highly profitable.</p>
+
+      <div class="big-number-card">
+        <div class="num">3.28×</div>
+        <div class="lbl">Return on Ad Spend</div>
+      </div>
+
+      <div class="case-divider"></div>
+
+      <div class="inline-stats">
+        <div class="inline-stat">
+          <span class="inline-stat-label">Total Ad Spend</span>
+          <span class="inline-stat-val">$23,136</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Revenue Generated</span>
+          <span class="inline-stat-val highlight">$75,881</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Website Purchases</span>
+          <span class="inline-stat-val">449 units</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Cost per Purchase</span>
+          <span class="inline-stat-val">$46.50</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Product Price</span>
+          <span class="inline-stat-val">$169 / bottle</span>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem; padding:1rem 1.5rem; background:rgba(255,255,255,0.02); border:1px solid var(--border);">
+        <p style="font-size:0.8rem; color:var(--muted); font-style:italic; line-height:1.7;">"Fragrance advertising lives or dies on emotional resonance. Our creative made audiences feel the scent — and 449 purchases at $46.50 CPA proves that when you get the emotion right, the algorithm rewards you."</p>
+        <p style="font-size:0.7rem; color:var(--gold); font-family:'DM Mono',monospace; letter-spacing:0.15em; text-transform:uppercase; margin-top:0.8rem;">— Echobroad Strategy Team</p>
+      </div>
     </div>
   </div>
 
-</div><!-- /case-inner -->
-</div><!-- /case-shell ely -->
+  <!-- CASES 04 & 05 -->
+  <div class="two-col reveal">
 
-<!-- ═══ AGENCY CLOSE ═══ -->
-<div class="agency-close r">
-  <div class="ac-eyebrow f-ui">Why Echobroad</div>
-  <h2 class="ac-h2 f-display">We win when <em>you win.</em><br>That's the only model.</h2>
-  <p class="ac-sub f-body">Based in Port Harcourt, Nigeria — operating globally. Echobroad is a Meta Ads agency that has spent 9+ years building campaigns that don't just look good, but convert. Every decision is data-backed. Every creative is built to perform.</p>
-  <div class="ac-grid">
-    <div class="ac-cell">
-      <div class="ac-cell-num f-display">9+</div>
-      <div class="ac-cell-title f-body">Years in Meta Advertising</div>
-      <div class="ac-cell-text f-body">Deep platform expertise through every algorithm update, iOS 14.5 fallout, and ad format evolution. We've seen it all — and adapted.</div>
+    <!-- CASE 04 — NNAMDI IBE -->
+    <div class="case-card">
+      <div class="case-num-large">Case Study 04 · Business Coach · Nigeria</div>
+      <div class="case-badge case-badge green" style="margin-bottom:1.5rem;">10,000+ Units Sold · Long-Term Retainer</div>
+      <h3 class="case-card-title">Nnamdi Ibe</h3>
+      <p class="case-card-type">Business Coach & Author · Nigeria · Ongoing Retainer</p>
+
+      <p style="font-size:0.85rem; color:var(--muted); line-height:1.8; margin-bottom:1.5rem;">A business coach with a powerful offer and a book to scale. We ran multi-campaign Meta funnels across ebook sales, webinar registration, and coaching leads — producing one of the best-performing digital product campaigns in the Nigerian market.</p>
+
+      <div class="big-number-card">
+        <div class="num">₦50,000,000</div>
+        <div class="lbl">Revenue Generated from Ads</div>
+      </div>
+
+      <div class="case-divider"></div>
+
+      <div class="inline-stats">
+        <div class="inline-stat">
+          <span class="inline-stat-label">Total Ad Spend</span>
+          <span class="inline-stat-val">~₦10,837,000</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Ebook Copies Sold</span>
+          <span class="inline-stat-val highlight">10,000+</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Product Price</span>
+          <span class="inline-stat-val">₦5,000 / copy</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">ROAS</span>
+          <span class="inline-stat-val">4.6×</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Consulting Offer Value</span>
+          <span class="inline-stat-val">₦3M–₦5M / client</span>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem; padding:1rem 1.5rem; background:rgba(61,220,132,0.03); border:1px solid rgba(61,220,132,0.1);">
+        <p style="font-size:0.8rem; color:var(--muted); font-style:italic; line-height:1.7;">"Digital product advertising at scale requires volume-thinking with precision targeting. 10,000+ transactions prove that when the funnel is built right, Meta becomes a revenue machine — not a gamble."</p>
+        <p style="font-size:0.7rem; color:var(--green); font-family:'DM Mono',monospace; letter-spacing:0.15em; text-transform:uppercase; margin-top:0.8rem;">— Echobroad Strategy Team</p>
+      </div>
     </div>
-    <div class="ac-cell">
-      <div class="ac-cell-num f-display">$227K</div>
-      <div class="ac-cell-title f-body">Revenue — Just These 2 Brands</div>
-      <div class="ac-cell-text f-body">Two campaigns. One agency. Two very different products. Same result: profitable, scalable, verifiable growth from Meta advertising.</div>
-    </div>
-    <div class="ac-cell">
-      <div class="ac-cell-num f-display">3–8×</div>
-      <div class="ac-cell-title f-body">Typical ROAS Range</div>
-      <div class="ac-cell-text f-body">For e-commerce brands running structured campaigns with Echobroad. Results depend on product, market, and creative quality — we optimise all three.</div>
+
+    <!-- CASE 05 — EXCEL & GRACE -->
+    <div class="case-card">
+      <div class="case-num-large">Case Study 05 · Business Consulting · Nigeria</div>
+      <div class="case-badge" style="margin-bottom:1.5rem;">851+ Leads · 5,000+ Conversations · Retainer</div>
+      <h3 class="case-card-title">Excel & Grace</h3>
+      <p class="case-card-type">Business Consulting & Structured Growth · Nigeria · Ongoing Retainer</p>
+
+      <p style="font-size:0.85rem; color:var(--muted); line-height:1.8; margin-bottom:1.5rem;">A consulting firm selling high-ticket packages of ₦3–5M per client. We built sustained lead generation and messaging campaigns that kept their pipeline full across multiple months — and earned a long-term retainer built on consistent results.</p>
+
+      <div class="big-number-card">
+        <div class="num">5,000+</div>
+        <div class="lbl">Qualified Conversations Started</div>
+      </div>
+
+      <div class="case-divider"></div>
+
+      <div class="inline-stats">
+        <div class="inline-stat">
+          <span class="inline-stat-label">Form & Meta Leads</span>
+          <span class="inline-stat-val highlight">851+</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Best Cost per Lead</span>
+          <span class="inline-stat-val">₦503/lead</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Messaging Conversations</span>
+          <span class="inline-stat-val">5,000+</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Client Offer Value</span>
+          <span class="inline-stat-val">₦3M–₦5M</span>
+        </div>
+        <div class="inline-stat">
+          <span class="inline-stat-label">Relationship Type</span>
+          <span class="inline-stat-val">Long-term Retainer</span>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem; padding:1rem 1.5rem; background:rgba(255,255,255,0.02); border:1px solid var(--border);">
+        <p style="font-size:0.8rem; color:var(--muted); font-style:italic; line-height:1.7;">"For high-ticket consulting, one qualified lead can be worth millions in revenue. We built the lead engine — they closed the deals. The retainer proves the system works month after month."</p>
+        <p style="font-size:0.7rem; color:var(--gold); font-family:'DM Mono',monospace; letter-spacing:0.15em; text-transform:uppercase; margin-top:0.8rem;">— Echobroad Strategy Team</p>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ═══ CTA ═══ -->
-<div id="consultation" class="cta-shell">
-  <div class="cta-deco"></div>
-  <span class="cta-eyebrow f-ui">You've seen the results. Now let's get yours.</span>
-  <h2 class="cta-h2 f-display">Your Brand<br>Could Be the <em>Next Case Study.</em></h2>
-  <p class="cta-p f-body">Book a free strategy call with the Echobroad team. We'll audit your current setup, identify where you're leaving money on the table, and show you exactly how we'd run your Meta ads.</p>
-  <div class="cta-btn-wrap">
-    <a href="https://www.echobroad.com" target="_blank" class="btn-cta f-ui">
-      Book Your Free Consultation →
-    </a>
-    <a href="https://www.echobroad.com" target="_blank" class="btn-ghost f-ui">or visit echobroad.com to learn more</a>
-  </div>
-  <div class="cta-pillars">
-    <div class="pillar">
-      <span class="pillar-num f-display">Free</span>
-      <span class="pillar-label f-ui">Strategy Call</span>
+<!-- FULL STATS BAR -->
+<div style="margin-top:4rem;" class="reveal">
+  <div class="stat-bar" style="max-width:100%;">
+    <div class="stat-bar-item">
+      <div class="stat-bar-num">$1B+</div>
+      <div class="stat-bar-label">USD Revenue Generated</div>
     </div>
-    <div class="pillar">
-      <span class="pillar-num f-display">No</span>
-      <span class="pillar-label f-ui">Lock-In Contracts</span>
+    <div class="stat-bar-item">
+      <div class="stat-bar-num">8.42×</div>
+      <div class="stat-bar-label">Peak ROAS</div>
     </div>
-    <div class="pillar">
-      <span class="pillar-num f-display">100%</span>
-      <span class="pillar-label f-ui">Data-Driven Creative</span>
+    <div class="stat-bar-item">
+      <div class="stat-bar-num">20K+</div>
+      <div class="stat-bar-label">Total Units Sold</div>
     </div>
-    <div class="pillar">
-      <span class="pillar-num f-display">3–8×</span>
-      <span class="pillar-label f-ui">Target ROAS Range</span>
+    <div class="stat-bar-item">
+      <div class="stat-bar-num">4</div>
+      <div class="stat-bar-label">Active Retainer Clients</div>
     </div>
-    <div class="pillar">
-      <span class="pillar-num f-display">9+</span>
-      <span class="pillar-label f-ui">Years Experience</span>
+    <div class="stat-bar-item">
+      <div class="stat-bar-num">9+</div>
+      <div class="stat-bar-label">Years on Meta</div>
     </div>
   </div>
 </div>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- CTA -->
+<div class="cta-section reveal">
+  <div class="section-label" style="display:block; text-align:center; margin-bottom:1rem;">Your Brand Could Be Next</div>
+  <h2 class="cta-title">Ready to See Your<br><em>Own Numbers Here?</em></h2>
+  <p class="cta-sub">We only take on clients we're confident we can get results for. Apply for a free strategy call — we'll audit your current setup and show you exactly what we'd do.</p>
+  <a href="https://calendly.com/daviduwak/echobroad-strategy" class="btn">Apply to Work With Us →</a>
+  <div style="margin-top:2rem; display:flex; justify-content:center; gap:3rem; flex-wrap:wrap;">
+    <span style="font-size:0.78rem; color:var(--muted); font-family:'DM Mono',monospace;">✓ Free Strategy Call</span>
+    <span style="font-size:0.78rem; color:var(--muted); font-family:'DM Mono',monospace;">✓ No Lock-In Contracts</span>
+    <span style="font-size:0.78rem; color:var(--muted); font-family:'DM Mono',monospace;">✓ 100% Data-Driven</span>
+    <span style="font-size:0.78rem; color:var(--muted); font-family:'DM Mono',monospace;">✓ Results or We Don't Eat</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <div class="foot-logo f-display">Echo<i>broad</i> Agency</div>
-  <div class="foot-links">
-    <a href="https://www.echobroad.com"   target="_blank" class="foot-link f-ui">echobroad.com</a>
-    <a href="https://execuluxe.com"       target="_blank" class="foot-link f-ui">execuluxe.com</a>
-    <a href="https://elysianparfum.com"   target="_blank" class="foot-link f-ui">elysianparfum.com</a>
-    <a href="#consultation"                               class="foot-link f-ui">Book Consultation</a>
-  </div>
-  <div class="foot-right f-ui">Meta Ads · Port Harcourt, Nigeria</div>
+  <div class="logo">Echo<span>broad</span></div>
+  <p>Port Harcourt, Nigeria · Operating Globally · echobroad.com</p>
+  <p>Meta Ads · Paid Social · E-commerce Growth</p>
 </footer>
 
 <script>
-/* ── SCROLL REVEAL ── */
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('v'); obs.unobserve(e.target); }
-  });
-}, { threshold: 0.07, rootMargin:'0px 0px -40px 0px' });
-document.querySelectorAll('.r').forEach(el => obs.observe(el));
-
-/* ── COUNTER ANIMATION ── */
-function animateNum(el) {
-  const raw    = el.dataset.count;
-  const prefix = el.dataset.prefix || '';
-  const suffix = el.dataset.suffix || '';
-  const target = parseFloat(raw);
-  const isFloat = raw.includes('.');
-  const duration = 1800;
-  const start = performance.now();
-
-  function tick(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const ease = 1 - Math.pow(1 - progress, 4);
-    const val = target * ease;
-    let display;
-    if (isFloat) {
-      display = val.toFixed(2);
-    } else if (target >= 1000) {
-      display = Math.floor(val).toLocaleString('en-US');
-    } else {
-      display = Math.floor(val);
-    }
-    el.textContent = prefix + display + suffix;
-    if (progress < 1) requestAnimationFrame(tick);
-    else el.textContent = prefix + (isFloat ? target.toFixed(2) : target >= 1000 ? target.toLocaleString('en-US') : target) + suffix;
-  }
-  requestAnimationFrame(tick);
-}
-
-const counterObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting && e.target.dataset.count) {
-      animateNum(e.target);
-      counterObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
-
-/* ── VIDEO PLAY / PAUSE ── */
-function playVid(card) {
-  const vid = card.querySelector('video');
-  if (!vid) return;
-  if (vid.paused) {
-    // pause all others
-    document.querySelectorAll('.vcard video').forEach(v => {
-      if (v !== vid) { v.pause(); v.closest('.vcard').classList.remove('playing'); }
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
-    vid.play();
-    card.classList.add('playing');
-  } else {
-    vid.pause();
-    card.classList.remove('playing');
-  }
-}
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
