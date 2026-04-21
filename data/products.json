@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Copy Swipe Vault",
+    "title": "Copy Swipe Vault",
+    "subtitle": "Ready-to-use headlines, hooks, captions, and ad copy for faster marketing execution.",
+    "price": 15000,
+    "currency": "NGN",
+    "priceDisplay": "₦15,000",
+    "description": "Stop struggling with what to write. Access a curated library of high-performing copy you can adapt for your ads, content, and sales messages in minutes.",
+    "image": "/images/Copy Swipe Vault.png",
+    "category": "Copywriting",
+    "featured": true,
+    "deliveryLink": "https://drive.google.com/drive/folders/1PIxdNHtHNZkEwP0yo3suDQd8ZxdaZjKP"
+  },
+  {
+    "id": 2,
+    "name": "Sales Scripts",
+    "title": "Sales Scripts",
+    "subtitle": "Ready-to-use scripts to follow up, handle objections, and close more sales.",
+    "price": 15000,
+    "currency": "NGN",
+    "priceDisplay": "₦15,000",
+    "description": "Convert more leads into paying clients. Use proven scripts for DMs, calls, and follow-ups to guide conversations, overcome objections, and close with confidence.",
+    "image": "/images/Sales Scripts.png",
+    "category": "Sales",
+    "featured": true,
+    "deliveryLink": "https://drive.google.com/drive/folders/1OkyNqwBLKB7CiZkQaiByhVN_OhkQtHPK"
+  },
+  {
+    "id": 3,
+    "name": "Funnel Kits",
+    "title": "Funnel Kits",
+    "subtitle": "Plug-and-play funnel assets to help you capture leads and convert faster.",
+    "price": 25000,
+    "currency": "NGN",
+    "priceDisplay": "₦25,000",
+    "description": "Build funnels that actually convert. Get ready-to-use pages, copy structures, and flow templates designed to turn traffic into leads and leads into customers.",
+    "image": "/images/Funnel Kits.png",
+    "category": "Marketing Assets",
+    "featured": true,
+    "deliveryLink": "https://drive.google.com/drive/folders/1ceGcCSUYOMbCnG1LMwu7c0CerUJU7KrC"
+  },
+  {
+    "id": 4,
+    "name": "Content Systems",
+    "title": "Content Systems",
+    "subtitle": "Structured content plans to help you stay visible, consistent, and profitable.",
+    "price": 15000,
+    "currency": "NGN",
+    "priceDisplay": "₦15,000",
+    "description": "Never run out of content ideas again. Follow a clear system for planning, creating, and publishing content that attracts attention and drives consistent results.",
+    "image": "/images/Content Systems.png",
+    "category": "Content Marketing",
+    "featured": true,
+    "deliveryLink": "https://drive.google.com/drive/folders/1PIxdNHtHNZkEwP0yo3suDQd8ZxdaZjKP"
+  },
+  {
+    "id": 5,
+    "name": "Strategy Toolkits",
+    "title": "Strategy Toolkits",
+    "subtitle": "Proven frameworks to help you plan smarter, execute better, and scale faster.",
+    "price": 15000,
+    "currency": "NGN",
+    "priceDisplay": "₦15,000",
+    "description": "Stop guessing your next move. Use practical marketing frameworks and strategic tools to build better campaigns, make stronger decisions, and grow with more direction.",
+    "image": "/images/Strategy Toolkits.png",
+    "category": "Strategy",
+    "featured": true,
+    "deliveryLink": "https://drive.google.com/drive/folders/1OkyNqwBLKB7CiZkQaiByhVN_OhkQtHPK"
+  }
+]

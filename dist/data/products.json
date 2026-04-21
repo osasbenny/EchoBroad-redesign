@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "name": "TikTok Ads",
+    "title": "The Complete TikTok Ads Setup Guide",
+    "subtitle": "Step-by-Step Training to Launch Profitable TikTok Ads",
+    "price": 20000,
+    "currency": "NGN",
+    "priceDisplay": "₦20,000",
+    "description": "Learn how to properly set up TikTok ads from scratch and launch campaigns that can generate leads, sales, and business growth. This course breaks down the ad setup process in a simple and practical way, so users can confidently create and run high-performing campaigns.",
+    "image": "/images/tiktok-ads-setup.png",
+    "category": "Digital Marketing",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Meta Ads",
+    "title": "The Complete Meta Ads Setup Guide",
+    "subtitle": "Step-by-Step Training to Launch Profitable Meta Ads",
+    "price": 20000,
+    "currency": "NGN",
+    "priceDisplay": "₦20,000",
+    "description": "Master the complete setup process for Facebook and Instagram ads. Learn how to structure campaigns properly, avoid costly mistakes, and launch ads that drive leads, conversions, and business growth.",
+    "image": "/images/meta-ads-setup-guide.png",
+    "category": "Digital Marketing",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Google Ads",
+    "title": "The Complete Google Ads Setup Guide",
+    "subtitle": "Step-by-Step Training to Launch Profitable Google Ads",
+    "price": 30000,
+    "currency": "NGN",
+    "priceDisplay": "₦30,000",
+    "description": "Learn how to set up Google Ads campaigns correctly to reach the right audience, drive quality traffic, and generate profitable results. Covers campaign structure, targeting, and launch strategy.",
+    "image": "/images/google-ads-setup.png",
+    "category": "Digital Marketing",
+    "featured": true
+  }
+]
