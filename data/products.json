@@ -68,5 +68,19 @@
     "category": "Strategy",
     "featured": true,
     "deliveryLink": "https://drive.google.com/drive/folders/1OkyNqwBLKB7CiZkQaiByhVN_OhkQtHPK"
+  },
+  {
+    "id": 6,
+    "name": "Ad Templates",
+    "title": "Ad Templates",
+    "subtitle": "Pre-designed, high-converting ad templates for all major platforms.",
+    "price": 15000,
+    "currency": "NGN",
+    "priceDisplay": "₦15,000",
+    "description": "Get ready-to-use ad templates that convert. Access professionally designed templates for Facebook, Instagram, TikTok, and Google Ads that you can customize for your business.",
+    "image": "/images/Ad Templates.png",
+    "category": "Ad Design",
+    "featured": true,
+    "deliveryLink": "https://drive.google.com/drive/folders/1ceGcCSUYOMbCnG1LMwu7c0CerUJU7KrC"
   }
 ]
